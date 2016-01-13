@@ -4,4 +4,9 @@ site_url: http://uvicnotes.github.io/ELEC-310/
 repo_url: https://github.com/UVicNotes/ELEC-310
 site_description: Course Notes for ELEC 310 - Digital Signal Processing I
 site_author: Ben Hawker
+extra_javascript: 
+    - http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+    - https://dl.dropboxusercontent.com/u/907326/mathjax_config.js
+markdown_extensions:
+    - mdx_math
 theme: readthedocs
