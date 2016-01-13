@@ -27,6 +27,8 @@
   <script src="../js/modernizr-2.8.3.min.js"></script>
   <script type="text/javascript" src="../js/highlight.pack.js"></script>
   <script src="../js/theme.js"></script> 
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script src="https://dl.dropboxusercontent.com/u/907326/mathjax_config.js"></script>
 
   
 </head>
@@ -146,9 +148,11 @@
 <p><strong>January 6, 2016</strong>  </p>
 <h2 id="signal-representation">Signal Representation</h2>
 <p>A sinusoid using 6 data points.</p>
-<p>$$
+<p>
+<script type="math/tex; mode=display">
     x(t) = \sum_{k=1}^{6} A_k \sin{(\omega_k t +\phi_k)}
-$$</p>
+</script>
+</p>
 <table>
 <thead>
 <tr>
@@ -199,55 +203,72 @@ $$</p>
 </table>
 <h2 id="complex-numbers">Complex Numbers</h2>
 <p>Let $z_0$ be a complex number with polar coordinates $(r_0,\Theta_0)$ and cartesian coordinates $(x_0,y_0)$. Then,</p>
-<p>$$\begin{align}
-    x_0 &amp;= \mathbb{Re}{z_0} = r_0 \cos{\Theta_0} \newline
-    y_0 &amp;= \mathbb{Im}{z_0} = r_0 \sin{\Theta_0}
-\end{align}$$</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    x_0 &= \mathbb{Re}\{z_0\} = r_0 \cos{\Theta_0} \newline
+    y_0 &= \mathbb{Im}\{z_0\} = r_0 \sin{\Theta_0}
+\end{align}</script>
+</p>
 <p>If we plot $r_0 = 2$ and $\Theta_0 = \frac{\pi}{4}$,</p>
 <h2 id="periodic-properties-of-discreet-time-signals">Periodic Properties of Discreet Time Signals</h2>
 <p>We can represent a discreet signal as,</p>
-<p>$$
+<p>
+<script type="math/tex; mode=display">
     x[n] = e^{j \omega_0 n}
-$$
+</script>
  and we know that,</p>
-<p>$$
+<p>
+<script type="math/tex; mode=display">
     e^{j (\omega_0 + 2\pi) n} = e^{j \omega_0 n}
- $$</p>
+ </script>
+</p>
 <p>Because the signals are periodic we choose an interval length of $2\pi$, and either $[ -\pi, \pi)$ or $[0,2\pi)$</p>
 <h2 id="condition-for-periodicity">Condition for Periodicity</h2>
 <p>A signal $x[n]$ is periodic with period $N$ if,</p>
-<p>$$
+<p>
+<script type="math/tex; mode=display">
     e^{j \omega_0 n} = e^{j \omega_0 (m+N)}
-$$</p>
+</script>
+</p>
 <p>for all $m \in \mathbb{R}$.</p>
-<p>$$\begin{align}
-    e^{j \omega_0 n} = e^{j(\omega_0n + 2k\pi)} &amp;= e^{j \omega_0 (m + N)} \newline
-    \omega_0n + 2k\pi &amp;= \omega_0(m+N) \newline
-    2k \pi &amp;= \omega_0 n
-\end{align}$$</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    e^{j \omega_0 n} = e^{j(\omega_0n + 2k\pi)} &= e^{j \omega_0 (m + N)} \newline
+    \omega_0n + 2k\pi &= \omega_0(m+N) \newline
+    2k \pi &= \omega_0 n
+\end{align}</script>
+</p>
 <h4 id="example">Example</h4>
 <p>Determine the fundamental period of,</p>
-<p>$$
+<p>
+<script type="math/tex; mode=display">
     x[n] = 2 \cos{\left(\frac{\pi}{4}n\right)} + \sin{\left(\frac{\pi}{8}n\right)} - 2 \cos{\left( \frac{\pi}{2}n + \frac{\pi}{6} \right)}
-$$</p>
+</script>
+</p>
 <h5 id="solution">Solution</h5>
 <p>$N$ will be $\text{lcm}{(N_1,N_2,N_3)}$ where,</p>
-<p>$$
+<p>
+<script type="math/tex; mode=display">
     x[n] = 2 \underset{x_1}\cos{\left(\frac{\pi}{4}n\right)} + \underset{x_2}\sin{\left(\frac{\pi}{8}n\right)} - 2 \underset{x_3}\cos{\left( \frac{\pi}{2}n + \frac{\pi}{6} \right)}
-$$</p>
+</script>
+</p>
 <p>So for $N_1$, since $x[n] = x[n + N_1]$ and $\omega_0 n = \omega_0 n + 2k\pi$</p>
-<p>$$\begin{align}
-    x_1[n + N_1] &amp;= x_1[n] \newline
-    2 \cos{\left(\frac{\pi}{4}\left(n + N_1\right)\right)} &amp;= 2 \cos{\left(\frac{\pi}{4}n\right)} \newline
-    2 \cos{\left(\frac{\pi}{4}\left(n + N_1\right)\right)} &amp;= 2 \cos{\left(\frac{\pi}{4}n + 2k\pi\right)}  \newline
-    \frac{\pi}{4} (n + N_1) &amp;= \frac{\pi}{4}n + 2k\pi \newline
-    n + N_1 &amp;= n + 8k \newline
-    N_1 &amp;= 8k \newline
-\end{align}$$</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    x_1[n + N_1] &= x_1[n] \newline
+    2 \cos{\left(\frac{\pi}{4}\left(n + N_1\right)\right)} &= 2 \cos{\left(\frac{\pi}{4}n\right)} \newline
+    2 \cos{\left(\frac{\pi}{4}\left(n + N_1\right)\right)} &= 2 \cos{\left(\frac{\pi}{4}n + 2k\pi\right)}  \newline
+    \frac{\pi}{4} (n + N_1) &= \frac{\pi}{4}n + 2k\pi \newline
+    n + N_1 &= n + 8k \newline
+    N_1 &= 8k \newline
+\end{align}</script>
+</p>
 <p>For $N_2$,</p>
-<p>$$\begin{align}
-    x_2[n + N_2] &amp;= x_2[n] \newline
-\end{align}$$</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    x_2[n + N_2] &= x_2[n] \newline
+\end{align}</script>
+</p>
 <p>and so on.</p>
               
             </div>

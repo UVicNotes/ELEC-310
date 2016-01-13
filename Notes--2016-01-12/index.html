@@ -27,6 +27,8 @@
   <script src="../js/modernizr-2.8.3.min.js"></script>
   <script type="text/javascript" src="../js/highlight.pack.js"></script>
   <script src="../js/theme.js"></script> 
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script src="https://dl.dropboxusercontent.com/u/907326/mathjax_config.js"></script>
 
   
 </head>
@@ -143,35 +145,45 @@
 <h2 id="energy-and-power-of-signals">Energy and Power of Signals</h2>
 <p>The notion of power and energy were initially only applicable to signals produced by physical systems only (i.e. v(t), i(t) across a resistor of resistance R). We create a generalization to allow power and energy to characterize any type of signal.</p>
 <p>We calculate the energy of a discreet time signal $x[n]$ over $[n_1,n_2]$ as</p>
-<p>$$
+<p>
+<script type="math/tex; mode=display">
     E_x = \sum_{-\infty}^{\infty} \left|x[n]\right|^2
-$$</p>
+</script>
+</p>
 <h4 id="example">Example</h4>
 <p>Find the energy contained in the signal,</p>
-<p>$$
+<p>
+<script type="math/tex; mode=display">
     x[n] = \left(\frac{1}{2}\right)^n u[n]
-$$</p>
+</script>
+</p>
 <h5 id="solution">Solution</h5>
 <p>Since $x[n]$ contains a unit step function, it will be causal, so</p>
-<p>$$\begin{align}
-    E_x &amp;= \sum_{-\infty}^{\infty} \left|x[n]\right|^2 \newline
-    &amp;=  \sum_{-\infty}^{\infty} \left|\left(\frac{1}{2}\right)^n u[n]\right|^2 \newline
-    &amp;=  \sum_{0}^{\infty} \left|\left(\frac{1}{2}\right)^n \right|^2 \newline
-    &amp;=  \sum_{0}^{\infty} \left(\frac{1}{4}\right)^n \newline
-    &amp;=  \frac{1}{1 - \frac{1}{4}} \newline
-    &amp;=  \frac{4}{3} \newline
-\end{align}$$</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    E_x &= \sum_{-\infty}^{\infty} \left|x[n]\right|^2 \newline
+    &=  \sum_{-\infty}^{\infty} \left|\left(\frac{1}{2}\right)^n u[n]\right|^2 \newline
+    &=  \sum_{0}^{\infty} \left|\left(\frac{1}{2}\right)^n \right|^2 \newline
+    &=  \sum_{0}^{\infty} \left(\frac{1}{4}\right)^n \newline
+    &=  \frac{1}{1 - \frac{1}{4}} \newline
+    &=  \frac{4}{3} \newline
+\end{align}</script>
+</p>
 <h3 id="growing-and-decaying">Growing and Decaying</h3>
 <p>Given an exponential signal,</p>
-<p>$$
+<p>
+<script type="math/tex; mode=display">
     x[n] = \left(\frac{a}{b} \right)^n u[n]
-$$</p>
+</script>
+</p>
 <p>A growing exponential is where $a \gt b$ and the energy will non-finite. A decaying exponential is where $a \lt b$ and will (possibly?) have a finite energy.</p>
 <h3 id="average-power">Average Power</h3>
 <p>A signal with finite energy is called an <strong>energy signal</strong>. Many Discreet Time signals don't have finite energy. For these signals we consider their <strong>average power</strong>.</p>
-<p>$$\begin{align}
+<p>
+<script type="math/tex; mode=display">\begin{align}
     P_x = \lim_{N \to \infty} \frac{1}{2N} \sum_{-N}^{N - 1} \left|x[n]\right|^2
-\end{align}$$</p>
+\end{align}</script>
+</p>
 <h2 id="discreet-time-systems">Discreet Time Systems</h2>
 <p>We represent a discrete-time system as a transformation that maps an input sequence $x[n]$ into a unique output sequence $y[n]$. We can classify these systems as,</p>
 <ul>
@@ -186,30 +198,40 @@ $$</p>
 superposition holds. </p>
 <h4 id="the-property-of-superposition">The Property of Superposition</h4>
 <p>If we consider two inputs to a system $x_1[n]$ and $x_2[n]$, we get two outputs $y_1[n]$ and $y_2[n]$ such that,</p>
-<p>$$\begin{align}
+<p>
+<script type="math/tex; mode=display">\begin{align}
     x_1[n] \to y_1[n] \newline
     x_2[n] \to y_2[n]
-\end{align}$$</p>
+\end{align}</script>
+</p>
 <p>now if we create any <strong>linear combination</strong> of $x_1[n]$ and $x_2[n]$, denoted $x_3[n]$. Where,</p>
-<p>$$\begin{align}
+<p>
+<script type="math/tex; mode=display">\begin{align}
     x_3[n] = a_1 x_1[n] + a_2 x_2[n]
-\end{align}$$</p>
+\end{align}</script>
+</p>
 <p>and $a_1, a_2 \in \mathbb R$. Then if $y_3[n]$, the system output for $x_3[n]$, is the same linear combination of $y_1[n]$ and $y_2[n]$, i.e., if</p>
-<p>$$\begin{align}
-    x_3[n] &amp;\to y_3[n] \newline
-    &amp;\text{and} \newline
-    y_3[n] &amp;= a_1 y_1[n] + a_2 y_2[n]
-\end{align}$$</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    x_3[n] &\to y_3[n] \newline
+    &\text{and} \newline
+    y_3[n] &= a_1 y_1[n] + a_2 y_2[n]
+\end{align}</script>
+</p>
 <p>the system is linear.</p>
 <h3 id="time-invariant-systems">Time Invariant Systems</h3>
 <p><em>definition</em>: A system is <strong>time invariant</strong> if for any input signal $x[n]$ with output signal $y[n]$, i.e.,</p>
-<p>$$\begin{align}
+<p>
+<script type="math/tex; mode=display">\begin{align}
     x[n] \to y[n]
-\end{align}$$</p>
+\end{align}</script>
+</p>
 <p>then for any <strong>time shift</strong> $n_0$ where $n_0 \in \mathbb Z$,</p>
-<p>$$\begin{align}
+<p>
+<script type="math/tex; mode=display">\begin{align}
     x[n - n_0] \to y[n - n_0]
-\end{align}$$</p>
+\end{align}</script>
+</p>
               
             </div>
           </div>

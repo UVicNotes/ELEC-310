@@ -27,6 +27,8 @@
   <script src="../js/modernizr-2.8.3.min.js"></script>
   <script type="text/javascript" src="../js/highlight.pack.js"></script>
   <script src="../js/theme.js"></script> 
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script src="https://dl.dropboxusercontent.com/u/907326/mathjax_config.js"></script>
 
   
 </head>
@@ -146,82 +148,112 @@
 <p><strong>January 8, 2016</strong>  </p>
 <h2 id="basic-discreet-time-signals">Basic Discreet Time Signals</h2>
 <h3 id="the-unit-step">The Unit Step</h3>
-<p>$$\begin{align}
-    u[n] &amp;= 1 &amp;~\text{if}~ n \ge 0 \newline
-    &amp;= 0 &amp;~\text{if}~n \lt 0
-\end{align}$$</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    u[n] &= 1 &~\text{if}~ n \ge 0 \newline
+    &= 0 &~\text{if}~n \lt 0
+\end{align}</script>
+</p>
 <h3 id="the-unit-impulse">The Unit Impulse</h3>
-<p>$$\begin{align}
-    \delta[n] &amp;= 1 &amp;~\text{if}~ n = 0 \newline
-    &amp;= 0 &amp;~\text{if}~ n \neq 0
-\end{align}$$</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    \delta[n] &= 1 &~\text{if}~ n = 0 \newline
+    &= 0 &~\text{if}~ n \neq 0
+\end{align}</script>
+</p>
 <h3 id="relationship-between-unit-impulse-and-step">Relationship between Unit Impulse and Step</h3>
-<p>$$
+<p>
+<script type="math/tex; mode=display">
     \delta[n] = u[n] - u[n-1]
-$$</p>
-<p>$$
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
     u[n] = \sum_{m = -\infty}^{n} \delta[m]
-$$</p>
+</script>
+</p>
 <h3 id="properties">Properties</h3>
 <p>The <strong>Sampling Property</strong> allows you to fix $x[n]$ if it is multiplied by the unit impulse function,</p>
-<p>$$
+<p>
+<script type="math/tex; mode=display">
     x[n]\delta[n-n_0] = x[n_0]\delta[n-n_0]
-$$</p>
+</script>
+</p>
 <h3 id="compared-to-continuous-time">Compared to Continuous Time</h3>
 <p>In discreet time $\delta[0] = 1$ compared to $\delta(0) =  \infty$ in continuous time.</p>
 <h2 id="exponential-signals">Exponential Signals</h2>
 <p>A discreet time exponential function is of the form,</p>
-<p>$$
+<p>
+<script type="math/tex; mode=display">
     x[n] = A\alpha^n
-$$</p>
+</script>
+</p>
 <p>where $A,\alpha \in \mathbb{C}$.</p>
 <h3 id="real-exponential-signals">Real Exponential Signals</h3>
 <p>If $A,\alpha \in \mathbb{R}$, we call it a <strong>Real Exponential Signal</strong> and write it as,</p>
-<p>$$
+<p>
+<script type="math/tex; mode=display">
     x[n] = Ce^{an}
-$$</p>
+</script>
+</p>
 <p>where $C,a \in \mathbb{R}$.</p>
 <h3 id="sinusoidal-signals">Sinusoidal Signals</h3>
 <p>We can write a <strong>Sinusoidal Signal</strong> in two ways,</p>
-<p>$$\begin{align}
-    x[n] &amp;= Ae^{j \omega_0 n} \newline
-    &amp;= \cos{(\omega_0 n + \varphi)}
-\end{align}$$</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    x[n] &= Ae^{j \omega_0 n} \newline
+    &= \cos{(\omega_0 n + \varphi)}
+\end{align}</script>
+</p>
 <p>we only consider this signal over a period of $2\pi$ typically $[-\pi,\pi]$</p>
 <h2 id="even-and-odd-symbols">Even and Odd Symbols</h2>
 <p>A discreet time signal is <strong>even</strong> if,</p>
-<p>$$
+<p>
+<script type="math/tex; mode=display">
     x[n] = x[-n]
-$$</p>
+</script>
+</p>
 <p>for all $n \in \mathbb Z$.</p>
 <p>A signal is <strong>odd</strong> if,</p>
-<p>$$
+<p>
+<script type="math/tex; mode=display">
     x[-n] = -x[n]
-$$</p>
+</script>
+</p>
 <p>Any signal can be broken in an even and odd portion, the sum of which is the signal,</p>
-<p>$$\begin{align}
+<p>
+<script type="math/tex; mode=display">\begin{align}
     x_{\text{even}}[n] = \frac{x[n] + x[-n]}{2}
-\end{align}$$
-$$\begin{align}
+\end{align}</script>
+<script type="math/tex; mode=display">\begin{align}
     x_{\text{odd}}[n] = \frac{x[n] - x[-n]}{2}
-\end{align}$$</p>
+\end{align}</script>
+</p>
 <p>and,</p>
-<p>$$\begin{align}
+<p>
+<script type="math/tex; mode=display">\begin{align}
     x[n] = x_{\text{even}}[n] + x_{\text{odd}}[n]
-\end{align}$$</p>
+\end{align}</script>
+</p>
 <h2 id="transformations-of-discreet-time-signals">Transformations of Discreet Time Signals</h2>
 <p>We can do a <strong>time shift</strong> by $n_0$ by,</p>
-<p>$$\begin{align}
+<p>
+<script type="math/tex; mode=display">\begin{align}
     x_{\text{shifted}}[n] = x[n-n_0]
-\end{align}$$</p>
+\end{align}</script>
+</p>
 <p>We can <strong>reverse time</strong> with,</p>
-<p>$$\begin{align}
+<p>
+<script type="math/tex; mode=display">\begin{align}
     x_{\text{reversed}}[n] = x[-n]
-\end{align}$$</p>
+\end{align}</script>
+</p>
 <p>We can <strong>scale time</strong> by $a$ with,</p>
-<p>$$\begin{align}
+<p>
+<script type="math/tex; mode=display">\begin{align}
     x_{\text{scaled}}[n] = x[an]
-\end{align}$$</p>
+\end{align}</script>
+</p>
 <h3 id="combining-transformations">Combining Transformations</h3>
 <p>Recommended order,</p>
 <ol>
