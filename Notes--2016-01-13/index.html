@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Notes  2016 01 13 - ELEC 310</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Notes  2016 01 13";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../Notes--2016-01-05/" class="icon icon-home"> ELEC 310</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Notes--2016-01-05/">Notes  2016 01 05</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Notes--2016-01-06/">Notes  2016 01 06</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Notes--2016-01-08/">Notes  2016 01 08</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Notes--2016-01-12/">Notes  2016 01 12</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Notes  2016 01 13</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#lecture-5-notes">Lecture 5 - Notes</a></li>
+                
+                    <li><a class="toctree-l4" href="#january-13-2016">January 13, 2016</a></li>
+                
+                    <li><a class="toctree-l4" href="#stable-systems">Stable Systems</a></li>
+                
+                    <li><a class="toctree-l4" href="#causal-systems">Causal Systems</a></li>
+                
+                    <li><a class="toctree-l4" href="#causal-signals">Causal Signals</a></li>
+                
+                    <li><a class="toctree-l4" href="#testing-system-properties">Testing System Properties</a></li>
+                
+                    <li><a class="toctree-l4" href="#linear-time-invariant-systems">Linear Time-Invariant Systems</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../Notes--2016-01-05/">ELEC 310</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../Notes--2016-01-05/">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Notes  2016 01 13</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/UVicNotes/ELEC-310" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="lecture-5-notes">Lecture 5 - Notes</h1>
+<h3 id="january-13-2016">January 13, 2016</h3>
+<h3 id="stable-systems">Stable Systems</h3>
+<p><em>definition</em>: A system is <strong>BIBO (Bounded Input Bounded Output) Stable</strong>  if and only if every bounded input produces a bounded output.3</p>
+<p>If,</p>
+<p>$$\begin{align}
+    \left| x[n] \right| \lt B_x 
+\end{align}$$</p>
+<p>and,</p>
+<p>$$\begin{align}
+    \left| y[n] \right| \lt B_y
+\end{align}$$</p>
+<p>for all $n$, and for some $B_x, B_y \in \mathbb R$ then the system is <strong>BIBO Stable</strong>.</p>
+<h3 id="causal-systems">Causal Systems</h3>
+<p><em>definition</em>: A system is <strong>causal</strong> if its output does not depend on <em>future</em> input.</p>
+<h4 id="examples">Examples</h4>
+<p>The system for the <em>forward difference</em>,</p>
+<p>$$
+    y[n] = x[n+1] - x[n]
+$$</p>
+<p>is <strong>not causal</strong> because it depends on future values of $x[n]$, namely $x[n+1]$. The system for the <em>backward difference</em>,</p>
+<p>$$
+    y[n] = x[n] - x[n-1]
+$$</p>
+<p>is <strong>causal</strong> because it only depends on past values of $x[n]$.</p>
+<h3 id="causal-signals">Causal <em>Signals</em></h3>
+<p><em>definition</em>: A signal is <strong>causal</strong> if,</p>
+<p>$$
+    x[n] = 0 ~\forall~ n \lt 0
+$$</p>
+<h3 id="testing-system-properties">Testing System Properties</h3>
+<h4 id="example">Example</h4>
+<p>Determine the system given by,</p>
+<p>$$
+    T(x[n]) = \left(\cos{\pi n}\right)x[n]
+$$</p>
+<p>is,</p>
+<ul>
+<li>Stable</li>
+<li>Causal</li>
+<li>Linear</li>
+<li>Time-Invariant</li>
+</ul>
+<h5 id="solution">Solution</h5>
+<p>We can reduce the system to,</p>
+<p>$$\begin{align}
+    y[n] &amp;= \left(\cos{\pi n}\right)x[n] \newline
+    &amp;= (-1)^n x[n]
+\end{align}$$</p>
+<h6 id="stability">Stability</h6>
+<p>If $\left|x[n]\right| \lt B_x$, then since $(-1)^n$ is bounded for all $n$,</p>
+<p>$$\begin{align}
+    \left|y[n] \right| \lt B_x
+\end{align}$$</p>
+<p>and the system is <strong>bounded</strong>.</p>
+<h6 id="causality">Causality</h6>
+<p>By inspections we can see that $y[n]$ does not really on any values other than $x[n]$, therefor it is <strong>causal</strong>.</p>
+<h6 id="linearity">Linearity</h6>
+<p>Let,</p>
+<p>$$
+    x[n] = a_1 x_1[n] + a_2 x_2[n]
+$$</p>
+<p>so,</p>
+<p>$$\begin{align}
+    y[n] &amp;= (1)^n x[n] \newline
+    &amp;= (1)^n \left(a_1 x_1[n] + a_2 x_2[n]\right) \newline
+    &amp;= (-1)^n a_1 x_1[n] + (-1)^n a_2 x_2[n] \newline
+    &amp;= a_1 \left[(-1)^n x_1[n]\right] + a_2 \left[(-1)^n  x_2[n]\right] \newline
+    &amp;= a_1 y_1[n] + a_2 y_2[n] \newline
+\end{align}$$</p>
+<p>and the system is <strong>linear</strong>.</p>
+<h6 id="time-invariant">Time-Invariant</h6>
+<p>Given,</p>
+<p>$$
+    y[n] = (-1)^n x[n]
+$$</p>
+<p>If we test we can find,</p>
+<p>$$\begin{align}
+    y[n] &amp;= x[n] \newline
+    y[n-1] &amp;\neq x[n-1]
+\end{align}$$</p>
+<p>so the system is not <strong>time-invariant</strong>.</p>
+<h2 id="linear-time-invariant-systems">Linear Time-Invariant Systems</h2>
+<p><em>definition</em>: A <strong>Linear Time-Invariant (LTI)</strong> system is characterized by its <em>impulse response</em> $h[n]$, i.e., $y[n] = h[n]$ when $x[n] = \delta[n]$.</p>
+<h4 id="example-ideal-delay">Example - Ideal Delay</h4>
+<p>Suppose,</p>
+<p>$$\begin{align}
+    y[n] = x[n - n_d]
+\end{align}$$</p>
+<p>where $-\infty \lt n \lt \infty$. So,</p>
+<p>$$\begin{align}
+    h[n] &amp;= \delta[n - n_d]
+\end{align}$$</p>
+<h4 id="example-moving-average">Example - Moving Average</h4>
+<p>Suppose,</p>
+<p>$$\begin{align}
+    y[n] = \frac{1}{M_1 + M_2 + 1} \sum_{k = -M_1}^{M_2} x[n-k]
+\end{align}$$</p>
+<p>So,</p>
+<p>$$\begin{align}
+    h[n] &amp;= \frac{1}{M_1 + M_2 + 1} \sum_{k = -M_1}^{M_2} \delta[n-k] \newline
+    &amp;= \frac{1}{M_1 + M_2 + 1} \sum_{k = -M_1}^{M_2} \delta[n-k] \newline
+\end{align}$$</p>
+<p>note this system is <strong>not causal</strong>.</p>
+<h4 id="example-accumulator">Example - Accumulator</h4>
+<p>Suppose,</p>
+<p>$$\begin{align}
+    y[n] = \sum_{k = -\infty}^{n} x[k]
+\end{align}$$</p>
+<p>then,</p>
+<p>$$\begin{align}
+    h[n] &amp;= \sum_{k = -\infty}^{n} \delta[k] \newline
+    &amp;= \sum_{m = 0}^{\infty} \delta[n - m] \newline
+    &amp;= u[n] \newline
+\end{align}$$</p>
+<h4 id="example-downsampler">Example - Downsampler</h4>
+<p>Suppose,</p>
+<p>$$\begin{align}
+    y[n] = x[Mn]
+\end{align}$$</p>
+<p>in this case the system is <strong>not time-invariant</strong>. So we can't compute the unit response.</p>
+<h4 id="example-forward-difference">Example - Forward Difference</h4>
+<p>Suppose,</p>
+<p>$$\begin{align}
+    y[n] = x[n+1] - x[n] 
+\end{align}$$</p>
+<p>then,</p>
+<p>$$\begin{align}
+    h[n] = \delta[n+1] - \delta[n]
+\end{align}$$</p>
+<h4 id="example-backward-difference">Example - Backward Difference</h4>
+<p>Suppose,</p>
+<p>$$\begin{align}
+    y[n] = x[n] - x[n - 1] 
+\end{align}$$</p>
+<p>then,</p>
+<p>$$\begin{align}
+    h[n] = \delta[n] - \delta[n - 1]
+\end{align}$$</p>
+<p>we can see that the backward difference is simply the forward difference time shifted by 1.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../Notes--2016-01-12/" class="btn btn-neutral" title="Notes  2016 01 12"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../Notes--2016-01-12/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+
+</body>
+</html>
