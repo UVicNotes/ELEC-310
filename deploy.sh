@@ -16,7 +16,7 @@ cd site/
 
 # inside this git repo we'll pretend to be a new user
 git config user.name "Travis CI"
-git config user.email "pascal@hawker.me"
+git config user.email "travis.ci.build@gmail.com"
 
 # commit any new changes
 git add .
