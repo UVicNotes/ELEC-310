@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2016 01 06 - ELEC 310</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "2016 01 06";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script src="https://cdn.rawgit.com/UVicNotes/UVicNotes/81099952ba789829fab1840e5d26cb5a2bf62011/helpers/mathjax.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> ELEC 310</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../2016-01-05/">2016 01 05</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">2016 01 06</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#lecture-2-notes">Lecture 2 - Notes</a></li>
+                
+                    <li><a class="toctree-l4" href="#signal-representation">Signal Representation</a></li>
+                
+                    <li><a class="toctree-l4" href="#complex-numbers">Complex Numbers</a></li>
+                
+                    <li><a class="toctree-l4" href="#periodic-properties-of-discreet-time-signals">Periodic Properties of Discreet Time Signals</a></li>
+                
+                    <li><a class="toctree-l4" href="#condition-for-periodicity">Condition for Periodicity</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../2016-01-08/">2016 01 08</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../2016-01-12/">2016 01 12</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../2016-01-13/">2016 01 13</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">ELEC 310</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>2016 01 06</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/UVicNotes/ELEC-310" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="lecture-2-notes">Lecture 2 - Notes</h1>
+<p><strong>January 6, 2016</strong>  </p>
+<h2 id="signal-representation">Signal Representation</h2>
+<p>A sinusoid using 6 data points.</p>
+<p>
+<script type="math/tex; mode=display">
+    x(t) = \sum_{k=1}^{6} A_k \sin{(\omega_k t +\phi_k)}
+</script>
+</p>
+<table>
+<thead>
+<tr>
+<th align="center">$k$</th>
+<th align="center">$\omega_k$</th>
+<th align="center">$A_k$</th>
+<th align="center">$\phi_k$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0.2388</td>
+<td align="center">0.1897</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">2</td>
+<td align="center">...</td>
+<td align="center">...</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">$2\sqrt{3}$</td>
+<td align="center">...</td>
+<td align="center">...</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">8</td>
+<td align="center">...</td>
+<td align="center">...</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">10</td>
+<td align="center">...</td>
+<td align="center">...</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">12</td>
+<td align="center">...</td>
+<td align="center">...</td>
+</tr>
+</tbody>
+</table>
+<h2 id="complex-numbers">Complex Numbers</h2>
+<p>Let $z_0$ be a complex number with polar coordinates $(r_0,\Theta_0)$ and cartesian coordinates $(x_0,y_0)$. Then,</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    x_0 &= \mathbb{Re}\{z_0\} = r_0 \cos{\Theta_0} \newline
+    y_0 &= \mathbb{Im}\{z_0\} = r_0 \sin{\Theta_0}
+\end{align}</script>
+</p>
+<p>If we plot $r_0 = 2$ and $\Theta_0 = \frac{\pi}{4}$,</p>
+<h2 id="periodic-properties-of-discreet-time-signals">Periodic Properties of Discreet Time Signals</h2>
+<p>We can represent a discreet signal as,</p>
+<p>
+<script type="math/tex; mode=display">
+    x[n] = e^{j \omega_0 n}
+</script>
+ and we know that,</p>
+<p>
+<script type="math/tex; mode=display">
+    e^{j (\omega_0 + 2\pi) n} = e^{j \omega_0 n}
+ </script>
+</p>
+<p>Because the signals are periodic we choose an interval length of $2\pi$, and either $[ -\pi, \pi)$ or $[0,2\pi)$</p>
+<h2 id="condition-for-periodicity">Condition for Periodicity</h2>
+<p>A signal $x[n]$ is periodic with period $N$ if,</p>
+<p>
+<script type="math/tex; mode=display">
+    e^{j \omega_0 n} = e^{j \omega_0 (m+N)}
+</script>
+</p>
+<p>for all $m \in \mathbb{R}$.</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    e^{j \omega_0 n} = e^{j(\omega_0n + 2k\pi)} &= e^{j \omega_0 (m + N)} \newline
+    \omega_0n + 2k\pi &= \omega_0(m+N) \newline
+    2k \pi &= \omega_0 n
+\end{align}</script>
+</p>
+<h4 id="example">Example</h4>
+<p>Determine the fundamental period of,</p>
+<p>
+<script type="math/tex; mode=display">
+    x[n] = 2 \cos{\left(\frac{\pi}{4}n\right)} + \sin{\left(\frac{\pi}{8}n\right)} - 2 \cos{\left( \frac{\pi}{2}n + \frac{\pi}{6} \right)}
+</script>
+</p>
+<h5 id="solution">Solution</h5>
+<p>$N$ will be $\text{lcm}{(N_1,N_2,N_3)}$ where,</p>
+<p>
+<script type="math/tex; mode=display">
+    x[n] = 2 \underset{x_1}\cos{\left(\frac{\pi}{4}n\right)} + \underset{x_2}\sin{\left(\frac{\pi}{8}n\right)} - 2 \underset{x_3}\cos{\left( \frac{\pi}{2}n + \frac{\pi}{6} \right)}
+</script>
+</p>
+<p>So for $N_1$, since $x[n] = x[n + N_1]$ and $\omega_0 n = \omega_0 n + 2k\pi$</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    x_1[n + N_1] &= x_1[n] \newline
+    2 \cos{\left(\frac{\pi}{4}\left(n + N_1\right)\right)} &= 2 \cos{\left(\frac{\pi}{4}n\right)} \newline
+    2 \cos{\left(\frac{\pi}{4}\left(n + N_1\right)\right)} &= 2 \cos{\left(\frac{\pi}{4}n + 2k\pi\right)}  \newline
+    \frac{\pi}{4} (n + N_1) &= \frac{\pi}{4}n + 2k\pi \newline
+    n + N_1 &= n + 8k \newline
+    N_1 &= 8k \newline
+\end{align}</script>
+</p>
+<p>For $N_2$,</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    x_2[n + N_2] &= x_2[n] \newline
+\end{align}</script>
+</p>
+<p>and so on.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../2016-01-08/" class="btn btn-neutral float-right" title="2016 01 08"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../2016-01-05/" class="btn btn-neutral" title="2016 01 05"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../2016-01-05/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../2016-01-08/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
