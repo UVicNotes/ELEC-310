@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2016 01 15 - ELEC 310</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "2016 01 15";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script src="https://cdn.rawgit.com/UVicNotes/UVicNotes/81099952ba789829fab1840e5d26cb5a2bf62011/helpers/mathjax.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> ELEC 310</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../2016-01-05/">2016 01 05</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../2016-01-06/">2016 01 06</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../2016-01-08/">2016 01 08</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../2016-01-12/">2016 01 12</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../2016-01-13/">2016 01 13</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">2016 01 15</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#lecture-6-notes">Lecture 6 - Notes</a></li>
+                
+                    <li><a class="toctree-l4" href="#administrative">Administrative</a></li>
+                
+                    <li><a class="toctree-l4" href="#linear-time-invariant-systems-continued">Linear Time Invariant Systems --- Continued</a></li>
+                
+                    <li><a class="toctree-l4" href="#convolution-in-discreet-time">Convolution in Discreet Time</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">ELEC 310</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>2016 01 15</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/UVicNotes/ELEC-310" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="lecture-6-notes">Lecture 6 - Notes</h1>
+<p><strong>January 15, 2016</strong>  </p>
+<h2 id="administrative">Administrative</h2>
+<h3 id="assignment-1">Assignment 1</h3>
+<ul>
+<li><strong>2.7)</strong> Complex exponentials are periodic if $\frac{\omega_0}{2 \pi}$ is rational</li>
+<li><strong>2.28)</strong> We are asked with limited information about a system<ul>
+<li><strong>b)</strong> Create a linear combination of the input signals that it is the 0 constant signal, i.e., the input is always 0. Check wether the output is 0 or not.</li>
+<li><strong>c,d)</strong> Create linear combinations of the input signals and their time shifted versions.</li>
+</ul>
+</li>
+</ul>
+<h3 id="other">Other</h3>
+<ul>
+<li>Will be out of class, Dr. Sima will be substituting</li>
+<li>Assignment 2 will be posted Monday</li>
+</ul>
+<hr />
+<h2 id="linear-time-invariant-systems-continued">Linear Time Invariant Systems --- Continued</h2>
+<p>What do we need to know about an LTI system to compute its response to any input signal? In a general way we can represent a discreet signal as,</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    x[n] = \sum_{k = -\infty}^{\infty} x[k]\delta[n-k]
+\end{align}</script>
+</p>
+<p>We know that $h[n]$ (the response to $\delta[n]$), if the system is Linear,</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    \underset{x[n]}{\sum_{k = -\infty}^{\infty} x[k]\delta[n-k]} 
+    \underset{S}\longrightarrow
+    \underset{y[n]}{\sum_{k = -\infty}^{\infty} x[k]h[n-k]}
+\end{align}</script>
+</p>
+<p>so,</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    y[n] = x[n] * h[n]
+\end{align}</script>
+</p>
+<p>where $*$ is the convolution operation.</p>
+<h2 id="convolution-in-discreet-time">Convolution in Discreet Time</h2>
+<h3 id="first-method">First Method</h3>
+<p>The first method is called <strong>scale, shift, stack and add</strong>. Given,</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    x_1[n] * x_2[n] &= \sum_{k=-\infty}^{\infty} 
+    \underbrace{x_1[n]}_{\text{Scaling factors}}
+    \cdot 
+    \underbrace{x_2[n - k]}_{\text{Time shifted version of } x_2[n]}
+\end{align}</script>
+</p>
+<p>We start by sketching $x_1[n]$ and $x_2[n]$, for each discreet signal $p$ in $x_1$ we sum them,</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    x_1[n] * x_2[n] = \sum_{q = 0}^{p} x_1[q]x_2[n - q]
+\end{align}</script>
+</p>
+<h3 id="second-method">Second Method</h3>
+<p>This is the <strong>flip, shift, multiply and add</strong> method. This is the discreet time version of the continuous time method of convolution. It computes the are of overlap between one signal and the flipped and shifted version of the other signal. Given $x_1[n]$ and $x_2[n]$,</p>
+<ol>
+<li>Draw $x_1[k]$ and $x_2[-k]$</li>
+<li>Slide $x_2[n-k]$  through $x_1[k]$ and calculate the areas</li>
+</ol>
+<h3 id="third-method">Third Method</h3>
+<p>This is the <strong>analytical method</strong> for solving the convolution. Given,</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    x_1[n] &= \left( \frac{3}{4} \right)^n u[n] \newline
+    x_2[n] &= u[n]
+\end{align}</script>
+</p>
+<p>so,</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    x_1[n] * x_2[n] &= \sum_{k = -\infty}^{\infty} x_1[n]x_2[n-k] \newline
+    &= \sum_{k = -\infty}^{\infty}  
+    \left( \frac{3}{4} \right)^n u[n]
+    u[n-k] \newline
+\end{align}</script>
+</p>
+<p>note that $u[k] = 0$ for all $k \lt 0$ and $u[n-k] = 0$ for all $0 \le n \lt k$, so,</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    x_1[n] * x_2[n] &= \sum_{k = 0}^{n} \left( \frac{3}{4} \right)^n \newline
+    &= \frac{\left( \frac{3}{4} \right)\left(1 - \left( \frac{3}{4} \right)^n \right)}{1 - \left( \frac{3}{4} \right)} \newline
+    &= \frac{\left( \frac{3}{4} \right)\left(1 - \left( \frac{3}{4} \right)^n \right)}{\frac{1}{4}} \newline
+    &= 3 \left(1 - \left( \frac{3}{4} \right)^n \right) \newline
+    &= \left\{
+    \begin{array}{ll}
+        3 \left(1 - \left( \frac{3}{4} \right)^n \right) & \mbox{if } n \ge 0 \newline
+        0 & \mbox{if } n < 0
+    \end{array}
+\right. \newline
+    &= 3 \left(1 - \left( \frac{3}{4} \right)^n \right) u[n] \newline
+\end{align}</script>
+</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../2016-01-13/" class="btn btn-neutral" title="2016 01 13"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../2016-01-13/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+
+</body>
+</html>
