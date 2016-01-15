@@ -2,13 +2,18 @@
     "docs": [
         {
             "location": "/", 
-            "text": "ELEC 310\n\n\n\n\nInstructor\n: Alexandra Albu\n\n\nOffice\n: EOW 307\n\n\nEmail\n: \naalbu@uvic.ca\n\n\nCoursespaces\n: \nLink\n\n\n\n\nOverview\n\n\nTo provide the student with basic knowledge about digital signal processing and the mathematic methods used within this field.\n\n\nTextbook\n\n\nTitle: Discrete-Time Signal Processing\n\nAuthor: Oppenheim and Schafer\n\nPublisher: Prentice Hall\n\nYear: 2009 \n\n\nOffice Hours\n\n\nWednesdays 1:30 PM to 3:30 PM\n\n\nAssessment\n\n\n\n\n\n\n\n\nTask\n\n\nWeight\n\n\n\n\n\n\n\n\n\n\nAssignments\n\n\n20%\n\n\n\n\n\n\nLab\n\n\n?\n\n\n\n\n\n\nMidterms\n\n\n40%\n\n\n\n\n\n\nFinal\n\n\n40%", 
+            "text": "ELEC 310\n\n\nCoursespaces\n\n\n\n\nInstructor\n: Alexandra Albu\n\n\nOffice\n: EOW 307\n\n\nEmail\n: \naalbu@uvic.ca\n\n\nOffice Hours\n: Wednesdays, 1:30 PM to 3:30 PM\n\n\n\n\nOverview\n\n\nTo provide the student with basic knowledge about digital signal processing and the mathematic methods used within this field.\n\n\nTextbook\n\n\nTitle: Discrete-Time Signal Processing\n\nAuthor: Oppenheim and Schafer\n\nPublisher: Prentice Hall\n\nYear: 2009 \n\n\nAssessment\n\n\n\n\n\n\n\n\nTask\n\n\nWeight\n\n\n\n\n\n\n\n\n\n\nAssignments\n\n\n20%\n\n\n\n\n\n\nLab\n\n\n?\n\n\n\n\n\n\nMidterms\n\n\n40%\n\n\n\n\n\n\nFinal\n\n\n40%", 
             "title": "Home"
         }, 
         {
             "location": "/#elec-310", 
-            "text": "Instructor : Alexandra Albu  Office : EOW 307  Email :  aalbu@uvic.ca  Coursespaces :  Link", 
+            "text": "", 
             "title": "ELEC 310"
+        }, 
+        {
+            "location": "/#coursespaces", 
+            "text": "Instructor : Alexandra Albu  Office : EOW 307  Email :  aalbu@uvic.ca  Office Hours : Wednesdays, 1:30 PM to 3:30 PM", 
+            "title": "Coursespaces"
         }, 
         {
             "location": "/#overview", 
@@ -19,11 +24,6 @@
             "location": "/#textbook", 
             "text": "Title: Discrete-Time Signal Processing \nAuthor: Oppenheim and Schafer \nPublisher: Prentice Hall \nYear: 2009", 
             "title": "Textbook"
-        }, 
-        {
-            "location": "/#office-hours", 
-            "text": "Wednesdays 1:30 PM to 3:30 PM", 
-            "title": "Office Hours"
         }, 
         {
             "location": "/#assessment", 
