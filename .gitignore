@@ -1,5 +1,8 @@
 # Built files from mkdocs
 site/
 
+# Assignments
+Assignments/
+
 # Binary Files
 *.pdf
