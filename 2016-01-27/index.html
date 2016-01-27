@@ -8,7 +8,7 @@
   
   <meta name="author" content="Ben Hawker">
   
-  <title>2016 01 19 - ELEC 310</title>
+  <title>2016 01 27 - ELEC 310</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "2016 01 19";
-    var mkdocs_page_input_path = "2016-01-19.md";
-    var mkdocs_page_url = "/2016-01-19/";
+    var mkdocs_page_name = "2016 01 27";
+    var mkdocs_page_input_path = "2016-01-27.md";
+    var mkdocs_page_url = "/2016-01-27/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -106,20 +106,8 @@
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">2016 01 19</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#lecture-7-notes">Lecture 7 - Notes</a></li>
-                
-                    <li><a class="toctree-l4" href="#ways-to-describe-lti-systems">Ways to Describe LTI Systems</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#difference-equations">Difference Equations</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../2016-01-19/">2016 01 19</a>
         
     </li>
 <li>
@@ -132,8 +120,19 @@
 <li>
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../2016-01-27/">2016 01 27</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">2016 01 27</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#lecture-11-notes">Lecture 11 - Notes</a></li>
+                
+                    <li><a class="toctree-l4" href="#difference-equations">Difference Equations</a></li>
+                
+                    <li><a class="toctree-l4" href="#eigenfunctions">Eigenfunctions</a></li>
+                
+            
+            </ul>
         
     </li>
 <li>
@@ -160,7 +159,7 @@
     
       
     
-    <li>2016 01 19</li>
+    <li>2016 01 27</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -174,16 +173,9 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="lecture-7-notes">Lecture 7 - Notes</h1>
-<p><strong>January 19, 2016</strong>  </p>
-<h2 id="ways-to-describe-lti-systems">Ways to Describe LTI Systems</h2>
-<ol>
-<li><a href="../2016-01-13/#linear-time-invariant-systems">The Impulse Response</a></li>
-<li><a href="#difference-equations">Difference Equations</a></li>
-<li>Frequency Response</li>
-<li>Transfer Function</li>
-</ol>
-<h1 id="difference-equations">Difference Equations</h1>
+                <h1 id="lecture-11-notes">Lecture 11 - Notes</h1>
+<p><strong>January 27, 2016</strong>  </p>
+<h2 id="difference-equations">Difference Equations</h2>
 <p><em>definition</em>: The <strong>Difference Equation</strong> is a formula for computing an output sample at time $n$ based on past and present input samples and past output samples in the time domain (<a href="https://ccrma.stanford.edu/~jos/fp/Difference_Equation_I.html">source</a>). We may write the general, causal, LTI difference equation as follows: </p>
 <p>
 <script type="math/tex; mode=display">\begin{align}
@@ -210,6 +202,111 @@
 \end{align}</script>
 </p>
 <p>note the change of the bound $j$ to accommodate the inclusion of $y[n]$.</p>
+<h4 id="example">Example</h4>
+<p>Consider,</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    y[n] – ay[n-1]=x[n]
+\end{align}</script>
+</p>
+<p><em>What is the impulse response of the system?</em></p>
+<p>This system is causal, therefore the initial rest condition applies, and</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    h[n] = 0 \text{ for } n \lt 0
+\end{align}</script>
+</p>
+<p>So, if $x[n] = \delta[n]$,</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    h[n] &= \delta[n] + a h[n-1] \\\\
+    h[0] &= \delta[0] + a h[-1] = 1 \\\\
+    h[1] &= \delta[1] + a h[0] = a \\\\
+    h[2] &= \delta[2] + a h[1] = a^2 \\\\
+    h[3] &= \delta[3] + a h[2] = a^3 \\\\
+    &~~\vdots \\\\
+    h[n] &= a^n \underbrace{u[n]}_\text{Causal} \\\\
+\end{align}</script>
+</p>
+<p><em>For what ranges of $a$ will the system be stable?</em></p>
+<p>We note that this absolutely summable for $|a| \lt 1$. This means the system is stable for $|a| \lt 1$.</p>
+<h3 id="condition-of-initial-rest">Condition of Initial Rest</h3>
+<p><em>definition</em>: We need addition conditions along with the difference equation. The most common is <strong>initial rest</strong>, where an input $x[n] = 0$ for all $n \lt n_0$ leads to $y[n] = 0$ for all $n \lt n_0$.</p>
+<h3 id="non-recursive-equations">Non-recursive Equations</h3>
+<p>Given,</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    y[n] &= \sum_{i=0}^{M} b_i x[n - i] - \sum_{j=1}^{N} a_j y[n-j]
+\end{align}</script>
+</p>
+<p>if $N = 0$, then,</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    y[n] &= \sum_{i=0}^{M} b_i x[n - i]
+\end{align}</script>
+</p>
+<p>and,</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    h[n] &= \sum_{i=0}^{M} b_i \delta[n - i]
+\end{align}</script>
+</p>
+<h2 id="eigenfunctions">Eigenfunctions</h2>
+<h4 id="recall">Recall</h4>
+<p>Vector $x$ is an <strong>eigenvector</strong> for matrix $A$ if,</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    Ax = \lambda x 
+\end{align}</script>
+</p>
+<p>where $\lambda$ is the <em>eigenvalue</em>.</p>
+<h3 id="eigenfunctions_1">Eigenfunctions</h3>
+<p>Can we extend the concept of <strong>eigenvectors</strong> to <strong>eigenfunctions</strong> of a system?</p>
+<p><img alt="" src="http://pages.jh.edu/~signals/lecture1/image/Image07.gif" /></p>
+<p>Given a system $x[n]\xrightarrow{T} y[n]$ we can write,</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    y[n] = T\left\{ x \left[n\right] \right\} = \lambda x
+\end{align}</script>
+</p>
+<h4 id="example_1">Example</h4>
+<p>Given a <em>moving average</em> system,</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    y[n] = \frac{x[n] + x[n-1]}{2}
+\end{align}</script>
+</p>
+<p>suppose $x[n] = \delta[n]$,</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    y[n] &= \frac{\delta[n] + \delta[n-1]}{2} \\\\
+    &\neq \lambda x
+\end{align}</script>
+</p>
+<p>which is not an eigenfunction. Let's try again with $x[n] = e^{j \omega_0 n}$, then,</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    y[n] &= \frac{e^{j \omega_0 n} + e^{j \omega_0 (n - 1)}}{2} \\\\
+    &= e^{j \omega_0 n} \cdot \frac{1 + e^{-j \omega_0}}{2} \\\\
+    &=  \underbrace{\left(\frac{1 + e^{-j \omega_0}}{2}\right)}_\lambda \underbrace{e^{j \omega_0 n}}_x\\\\
+    &=  \lambda x\\\\
+\end{align}</script>
+</p>
+<h3 id="why-eigenfunctions">Why Eigenfunctions?</h3>
+<p>If the input to an LTI system is represented as a linear combination of complex exponentials, then the output can also be represented as a linear combination of the same complex exponential signals.</p>
+<h3 id="the-eigenfunction-property">The Eigenfunction Property</h3>
+<p><em>definition</em>: The <strong>eigenfunction property</strong> states given </p>
+<p>
+<script type="math/tex; mode=display">
+    x[n] = e^{j \omega_0 n} \to y[n] = H \left(e^{j \omega_0} \right) \cdot e^{j \omega_0 n}
+</script>
+</p>
+<p>if $x[n] = \sum_k \alpha_k e^{j \omega_k n}$, then,</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    y[n] = \sum_k \alpha_k H \left(e^{j \omega_k} \right) e^{j \omega_k n}
+\end{align}</script>
+</p>
               
             </div>
           </div>
@@ -217,10 +314,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../2016-01-26/" class="btn btn-neutral float-right" title="2016 01 26">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../2016-01-15/" class="btn btn-neutral" title="2016 01 15"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../2016-01-26/" class="btn btn-neutral" title="2016 01 26"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -248,10 +343,8 @@
           <a href="https://github.com/UVicNotes/ELEC-310" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../2016-01-15/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../2016-01-26/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../2016-01-26/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
