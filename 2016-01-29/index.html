@@ -8,7 +8,7 @@
   
   <meta name="author" content="Ben Hawker">
   
-  <title>2016 01 06 - ELEC 310</title>
+  <title>2016 01 29 - ELEC 310</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "2016 01 06";
-    var mkdocs_page_input_path = "2016-01-06.md";
-    var mkdocs_page_url = "/2016-01-06/";
+    var mkdocs_page_name = "2016 01 29";
+    var mkdocs_page_input_path = "2016-01-29.md";
+    var mkdocs_page_url = "/2016-01-29/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -71,23 +71,8 @@
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">2016 01 06</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#lecture-2-notes">Lecture 2 - Notes</a></li>
-                
-                    <li><a class="toctree-l4" href="#signal-representation">Signal Representation</a></li>
-                
-                    <li><a class="toctree-l4" href="#complex-numbers">Complex Numbers</a></li>
-                
-                    <li><a class="toctree-l4" href="#periodic-properties-of-discreet-time-signals">Periodic Properties of Discreet Time Signals</a></li>
-                
-                    <li><a class="toctree-l4" href="#condition-for-periodicity">Condition for Periodicity</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../2016-01-06/">2016 01 06</a>
         
     </li>
 <li>
@@ -142,8 +127,17 @@
 <li>
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../2016-01-29/">2016 01 29</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">2016 01 29</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#lecture-12-notes">Lecture 12 - Notes</a></li>
+                
+                    <li><a class="toctree-l4" href="#eigenfunctions-continued">Eigenfunctions - Continued</a></li>
+                
+            
+            </ul>
         
     </li>
 <li>
@@ -170,7 +164,7 @@
     
       
     
-    <li>2016 01 06</li>
+    <li>2016 01 29</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -184,132 +178,50 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="lecture-2-notes">Lecture 2 - Notes</h1>
-<p><strong>January 6, 2016</strong>  </p>
-<h2 id="signal-representation">Signal Representation</h2>
-<p>A sinusoid using 6 data points.</p>
-<p>
-<script type="math/tex; mode=display">
-    x(t) = \sum_{k=1}^{6} A_k \sin{(\omega_k t +\phi_k)}
-</script>
-</p>
-<table>
-<thead>
-<tr>
-<th align="center">$k$</th>
-<th align="center">$\omega_k$</th>
-<th align="center">$A_k$</th>
-<th align="center">$\phi_k$</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">0.2388</td>
-<td align="center">0.1897</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td align="center">2</td>
-<td align="center">...</td>
-<td align="center">...</td>
-</tr>
-<tr>
-<td align="center">3</td>
-<td align="center">$2\sqrt{3}$</td>
-<td align="center">...</td>
-<td align="center">...</td>
-</tr>
-<tr>
-<td align="center">4</td>
-<td align="center">8</td>
-<td align="center">...</td>
-<td align="center">...</td>
-</tr>
-<tr>
-<td align="center">5</td>
-<td align="center">10</td>
-<td align="center">...</td>
-<td align="center">...</td>
-</tr>
-<tr>
-<td align="center">6</td>
-<td align="center">12</td>
-<td align="center">...</td>
-<td align="center">...</td>
-</tr>
-</tbody>
-</table>
-<h2 id="complex-numbers">Complex Numbers</h2>
-<p>Let $z_0$ be a complex number with polar coordinates $(r_0,\Theta_0)$ and cartesian coordinates $(x_0,y_0)$. Then,</p>
+                <h1 id="lecture-12-notes">Lecture 12 - Notes</h1>
+<p><strong>January 29, 2016</strong>  </p>
+<h2 id="eigenfunctions-continued">Eigenfunctions - Continued</h2>
+<p><em>definition</em>: Given a system $y[n] = H\left(e^{j \omega}\right) e^{j \omega n}$ with an impulse response $h[n]$, the <strong>frequency response</strong> is,</p>
 <p>
 <script type="math/tex; mode=display">\begin{align}
-    x_0 &= \mathbb{Re}\{z_0\} = r_0 \cos{\Theta_0} \newline
-    y_0 &= \mathbb{Im}\{z_0\} = r_0 \sin{\Theta_0}
+    H\left(e^{j \omega}\right) = \sum_{k = -\infty}^{\infty} h[n] e^{-j \omega n}
 \end{align}</script>
 </p>
-<p>If we plot $r_0 = 2$ and $\Theta_0 = \frac{\pi}{4}$,</p>
-<h2 id="periodic-properties-of-discreet-time-signals">Periodic Properties of Discreet Time Signals</h2>
-<p>We can represent a discreet signal as,</p>
-<p>
-<script type="math/tex; mode=display">
-    x[n] = e^{j \omega_0 n}
-</script>
- and we know that,</p>
-<p>
-<script type="math/tex; mode=display">
-    e^{j (\omega_0 + 2\pi) n} = e^{j \omega_0 n}
- </script>
-</p>
-<p>Because the signals are periodic we choose an interval length of $2\pi$, and either $[ -\pi, \pi)$ or $[0,2\pi)$</p>
-<h2 id="condition-for-periodicity">Condition for Periodicity</h2>
-<p>A signal $x[n]$ is periodic with period $N$ if,</p>
-<p>
-<script type="math/tex; mode=display">
-    e^{j \omega_0 n} = e^{j \omega_0 (m+N)}
-</script>
-</p>
-<p>for all $m \in \mathbb{R}$.</p>
+<p>Given a difference equation,</p>
 <p>
 <script type="math/tex; mode=display">\begin{align}
-    e^{j \omega_0 n} = e^{j(\omega_0n + 2k\pi)} &= e^{j \omega_0 (m + N)} \newline
-    \omega_0n + 2k\pi &= \omega_0(m+N) \newline
-    2k \pi &= \omega_0 n
+    \sum_{i=0}^{M} b_i x[n - i] = \sum_{j=0}^{N} a_j y[n-j]
 \end{align}</script>
 </p>
-<h4 id="example">Example</h4>
-<p>Determine the fundamental period of,</p>
-<p>
-<script type="math/tex; mode=display">
-    x[n] = 2 \cos{\left(\frac{\pi}{4}n\right)} + \sin{\left(\frac{\pi}{8}n\right)} - 2 \cos{\left( \frac{\pi}{2}n + \frac{\pi}{6} \right)}
-</script>
-</p>
-<h5 id="solution">Solution</h5>
-<p>$N$ will be $\text{lcm}{(N_1,N_2,N_3)}$ where,</p>
-<p>
-<script type="math/tex; mode=display">
-    x[n] = 2 \underset{x_1}\cos{\left(\frac{\pi}{4}n\right)} + \underset{x_2}\sin{\left(\frac{\pi}{8}n\right)} - 2 \underset{x_3}\cos{\left( \frac{\pi}{2}n + \frac{\pi}{6} \right)}
-</script>
-</p>
-<p>So for $N_1$, since $x[n] = x[n + N_1]$ and $\omega_0 n = \omega_0 n + 2k\pi$</p>
+<p>the frequency response is,</p>
 <p>
 <script type="math/tex; mode=display">\begin{align}
-    x_1[n + N_1] &= x_1[n] \newline
-    2 \cos{\left(\frac{\pi}{4}\left(n + N_1\right)\right)} &= 2 \cos{\left(\frac{\pi}{4}n\right)} \newline
-    2 \cos{\left(\frac{\pi}{4}\left(n + N_1\right)\right)} &= 2 \cos{\left(\frac{\pi}{4}n + 2k\pi\right)}  \newline
-    \frac{\pi}{4} (n + N_1) &= \frac{\pi}{4}n + 2k\pi \newline
-    n + N_1 &= n + 8k \newline
-    N_1 &= 8k \newline
+    H\left(e^{j \omega}\right) = \frac{\sum_{i=0}^{M} b_i e^{-j \omega i}}{\sum_{k=0}^{N} a_k e^{-j \omega k}}
 \end{align}</script>
 </p>
-<p>For $N_2$,</p>
+<h4 id="examples">Examples</h4>
+<p><em>Is $3^n$ an eigenfunction?</em></p>
+<p>Yes. Since $3^n = \left(3e^{j0}\right)^n$.</p>
+<p><em>Is $\cos{\omega_0 n}$ an eigenfunction?</em></p>
+<p>No.</p>
+<h3 id="sinusoidal-system-responses">Sinusoidal System Responses</h3>
+<p>Suppose, $x[n] = A \cos{\omega_0 n + \varphi}$, then</p>
 <p>
 <script type="math/tex; mode=display">\begin{align}
-    x_2[n + N_2] &= x_2[n] \newline
+    x[n] &= A \cos{\omega_0 n + \varphi} \\\\
+    &= \frac{A}{2}\left( e^{j(\omega_0 n + \varphi)} + e^{-j(\omega_0 n + \varphi)} \right) \\\\
+    &= \frac{A}{2}\left( e^{j\omega_0 n}e^{j\varphi} + e^{-j\omega_0 n}e^{j\varphi} \right) \\\\
+    &= \frac{A}{2} e^{j\omega_0 n}e^{j\varphi} + \frac{A}{2} e^{j\omega_0 n}e^{-j\varphi} \\\\
+    &\xrightarrow{S} \frac{A}{2} e^{j\varphi} H\left(e^{j \omega_0}\right) e^{j\omega_0 n} + \frac{A}{2} e^{-j\varphi} H\left(e^{-j \omega_0}\right) e^{j\omega_0 n}  \\\\
 \end{align}</script>
 </p>
-<p>and so on.</p>
+<p>This gives us,</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    y[n] &= \frac{A}{2} e^{j\varphi} H\left(e^{j \omega_0}\right) e^{j\omega_0 n} + \frac{A}{2} e^{-j\varphi} H\left(e^{-j \omega_0}\right) e^{j\omega_0 n} \\\\
+    &= A \left|H\left( e^{j \omega_0} \right)\right|\cos{\left(\omega_0 n + \varphi - \theta_0\right)}
+\end{align}</script>
+</p>
               
             </div>
           </div>
@@ -317,10 +229,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../2016-01-08/" class="btn btn-neutral float-right" title="2016 01 08">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../2016-01-05/" class="btn btn-neutral" title="2016 01 05"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../2016-01-27/" class="btn btn-neutral" title="2016 01 27"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -348,10 +258,8 @@
           <a href="https://github.com/UVicNotes/ELEC-310" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../2016-01-05/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../2016-01-27/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../2016-01-08/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
