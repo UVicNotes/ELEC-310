@@ -8,7 +8,7 @@
   
   <meta name="author" content="Ben Hawker">
   
-  <title>2016 01 15 - ELEC 310</title>
+  <title>2016 02 03 - ELEC 310</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "2016 01 15";
-    var mkdocs_page_input_path = "2016-01-15.md";
-    var mkdocs_page_url = "/2016-01-15/";
+    var mkdocs_page_name = "2016 02 03";
+    var mkdocs_page_input_path = "2016-02-03.md";
+    var mkdocs_page_url = "/2016-02-03/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -99,21 +99,8 @@
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">2016 01 15</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#lecture-6-notes">Lecture 6 - Notes</a></li>
-                
-                    <li><a class="toctree-l4" href="#administrative">Administrative</a></li>
-                
-                    <li><a class="toctree-l4" href="#linear-time-invariant-systems-continued">Linear Time Invariant Systems --- Continued</a></li>
-                
-                    <li><a class="toctree-l4" href="#convolution-in-discreet-time">Convolution in Discreet Time</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../2016-01-15/">2016 01 15</a>
         
     </li>
 <li>
@@ -147,8 +134,17 @@
 <li>
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../2016-02-03/">2016 02 03</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">2016 02 03</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#lecture-13-notes">Lecture 13 - Notes</a></li>
+                
+                    <li><a class="toctree-l4" href="#the-discrete-time-fourier-transform">The Discrete-Time Fourier Transform</a></li>
+                
+            
+            </ul>
         
     </li>
 <li>
@@ -175,7 +171,7 @@
     
       
     
-    <li>2016 01 15</li>
+    <li>2016 02 03</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -189,104 +185,54 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="lecture-6-notes">Lecture 6 - Notes</h1>
-<p><strong>January 15, 2016</strong>  </p>
-<h2 id="administrative">Administrative</h2>
-<h3 id="assignment-1">Assignment 1</h3>
-<ul>
-<li><strong>2.7)</strong> Complex exponentials are periodic if $\frac{\omega_0}{2 \pi}$ is rational</li>
-<li><strong>2.28)</strong> We are asked with limited information about a system<ul>
-<li><strong>b)</strong> Create a linear combination of the input signals that it is the 0 constant signal, i.e., the input is always 0. Check wether the output is 0 or not.</li>
-<li><strong>c,d)</strong> Create linear combinations of the input signals and their time shifted versions.</li>
-</ul>
-</li>
-</ul>
-<h3 id="other">Other</h3>
-<ul>
-<li>Will be out of class, Dr. Sima will be substituting</li>
-<li>Assignment 2 will be posted Monday</li>
-</ul>
-<hr />
-<h2 id="linear-time-invariant-systems-continued">Linear Time Invariant Systems --- Continued</h2>
-<p>What do we need to know about an LTI system to compute its response to any input signal? In a general way we can represent a discreet signal as,</p>
+                <h1 id="lecture-13-notes">Lecture 13 - Notes</h1>
+<p><strong>February 3, 2016</strong>  </p>
+<h2 id="the-discrete-time-fourier-transform">The Discrete-Time Fourier Transform</h2>
+<p><em>definition</em>: We define the <strong>Discrete-Time Fourier Transform</strong> as,</p>
+<p>
+<script type="math/tex; mode=display">
+    X\left( e^{j\omega} \right) = \sum_{k = -\infty}^{\infty} x[k]e^{-j \omega k}
+</script>
+</p>
+<p>and the inverse transform,</p>
 <p>
 <script type="math/tex; mode=display">\begin{align}
-    x[n] = \sum_{k = -\infty}^{\infty} x[k]\delta[n-k]
+    x[n] = \frac{1}{2\pi} \int_{-\pi}^{\pi} X\left(e^{j\omega}\right) e^{j \omega n} ~d\omega
 \end{align}</script>
 </p>
-<p>We know that $h[n]$ (the response to $\delta[n]$), if the system is Linear,</p>
+<h4 id="example">Example</h4>
+<p>Find the Fourier transform of,</p>
 <p>
 <script type="math/tex; mode=display">\begin{align}
-    \underset{x[n]}{\sum_{k = -\infty}^{\infty} x[k]\delta[n-k]} 
-    \underset{S}\longrightarrow
-    \underset{y[n]}{\sum_{k = -\infty}^{\infty} x[k]h[n-k]}
+    x[n] = a^n u[n]
 \end{align}</script>
 </p>
-<p>so,</p>
+<p>where $|a| \lt 1$.</p>
+<p>So,</p>
 <p>
 <script type="math/tex; mode=display">\begin{align}
-    y[n] = x[n] * h[n]
+    X\left( e^{j\omega} \right) &= \sum_{k = -\infty}^{\infty} x[k]e^{-j \omega k} \\\\ 
+    &= \sum_{k = -\infty}^{\infty} a^k u[k] e^{-j \omega k} \\\\
+    &= \sum_{k = 0}^{\infty} a^k e^{-j \omega k} \\\\
+    &= \sum_{k = 0}^{\infty} \left( a e^{-j \omega} \right)^k \\\\
+    &= \frac{1}{1 - a e^{-j \omega}} \\\\
 \end{align}</script>
 </p>
-<p>where $*$ is the convolution operation.</p>
-<h2 id="convolution-in-discreet-time">Convolution in Discreet Time</h2>
-<h3 id="first-method">First Method</h3>
-<p>The first method is called <strong>scale, shift, stack and add</strong>. Given,</p>
+<h4 id="example_1">Example</h4>
+<p>Find the inverse Fourier transform of,</p>
 <p>
 <script type="math/tex; mode=display">\begin{align}
-    x_1[n] * x_2[n] &= \sum_{k=-\infty}^{\infty} 
-    \underbrace{x_1[n]}_{\text{Scaling factors}}
-    \cdot 
-    \underbrace{x_2[n - k]}_{\text{Time shifted version of } x_2[n]}
+    X\left(e^{j\omega}\right) = 1 + 3e^{-j\omega} + 2e^{-j2\omega} - 4e^{-j3\omega} + e^{-j10\omega}
 \end{align}</script>
 </p>
-<p>We start by sketching $x_1[n]$ and $x_2[n]$, for each discreet signal $p$ in $x_1$ we sum them,</p>
+<p>Using the properties of Fourier transforms,</p>
 <p>
 <script type="math/tex; mode=display">\begin{align}
-    x_1[n] * x_2[n] = \sum_{q = 0}^{p} x_1[q]x_2[n - q]
-\end{align}</script>
-</p>
-<h3 id="second-method">Second Method</h3>
-<p>This is the <strong>flip, shift, multiply and add</strong> method. This is the discreet time version of the continuous time method of convolution. It computes the are of overlap between one signal and the flipped and shifted version of the other signal. Given $x_1[n]$ and $x_2[n]$,</p>
-<ol>
-<li>Draw $x_1[k]$ and $x_2[-k]$</li>
-</ol>
-<p><img alt="x_1 and x_2" src="../img/convolution-a.jpg" /></p>
-<ol>
-<li>Slide $x_2[n-k]$  through $x_1[k]$ and calculate the areas</li>
-</ol>
-<p><img alt="Sliding x_2" src="../img/convolution-b.jpg" /></p>
-<h3 id="third-method">Third Method</h3>
-<p>This is the <strong>analytical method</strong> for solving the convolution. Given,</p>
-<p>
-<script type="math/tex; mode=display">\begin{align}
-    x_1[n] &= \left( \frac{3}{4} \right)^n u[n] \newline
-    x_2[n] &= u[n]
-\end{align}</script>
-</p>
-<p>so,</p>
-<p>
-<script type="math/tex; mode=display">\begin{align}
-    x_1[n] * x_2[n] &= \sum_{k = -\infty}^{\infty} x_1[n]x_2[n-k] \newline
-    &= \sum_{k = -\infty}^{\infty}  
-    \left( \frac{3}{4} \right)^n u[n]
-    u[n-k] \newline
-\end{align}</script>
-</p>
-<p>note that $u[k] = 0$ for all $k \lt 0$ and $u[n-k] = 0$ for all $0 \le n \lt k$, so,</p>
-<p>
-<script type="math/tex; mode=display">\begin{align}
-    x_1[n] * x_2[n] &= \sum_{k = 0}^{n} \left( \frac{3}{4} \right)^n \newline
-    &= \frac{\left( \frac{3}{4} \right)\left(1 - \left( \frac{3}{4} \right)^n \right)}{1 - \left( \frac{3}{4} \right)} \newline
-    &= \frac{\left( \frac{3}{4} \right)\left(1 - \left( \frac{3}{4} \right)^n \right)}{\frac{1}{4}} \newline
-    &= 3 \left(1 - \left( \frac{3}{4} \right)^n \right) \newline
-    &= \left\{
-    \begin{array}{ll}
-        3 \left(1 - \left( \frac{3}{4} \right)^n \right) & \mbox{if } n \ge 0 \newline
-        0 & \mbox{if } n < 0
-    \end{array}
-\right. \newline
-    &= 3 \left(1 - \left( \frac{3}{4} \right)^n \right) u[n] \newline
+    x[n] = \underbrace{\delta[n]}_{1} + 
+           \underbrace{3\delta[n-1]}_{3e^{-j \omega}} + 
+           \underbrace{2\delta[n-2]}_{2e^{-j2\omega}} - 
+           \underbrace{4\delta[n-3]}_{4e^{-j3\omega}} + 
+           \underbrace{\delta[n-10]}_{e^{-j10\omega}}
 \end{align}</script>
 </p>
               
@@ -296,10 +242,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../2016-01-19/" class="btn btn-neutral float-right" title="2016 01 19">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../2016-01-13/" class="btn btn-neutral" title="2016 01 13"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../2016-01-29/" class="btn btn-neutral" title="2016 01 29"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -327,10 +271,8 @@
           <a href="https://github.com/UVicNotes/ELEC-310" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../2016-01-13/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../2016-01-29/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../2016-01-19/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

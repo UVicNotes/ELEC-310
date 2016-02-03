@@ -544,6 +544,31 @@
             "location": "/2016-01-29/#sinusoidal-system-responses", 
             "text": "Suppose, $x[n] = A \\cos{\\omega_0 n + \\varphi}$, then   \\begin{align}\n    x[n] &= A \\cos{\\omega_0 n + \\varphi} \\\\\\\\\n    &= \\frac{A}{2}\\left( e^{j(\\omega_0 n + \\varphi)} + e^{-j(\\omega_0 n + \\varphi)} \\right) \\\\\\\\\n    &= \\frac{A}{2}\\left( e^{j\\omega_0 n}e^{j\\varphi} + e^{-j\\omega_0 n}e^{j\\varphi} \\right) \\\\\\\\\n    &= \\frac{A}{2} e^{j\\omega_0 n}e^{j\\varphi} + \\frac{A}{2} e^{j\\omega_0 n}e^{-j\\varphi} \\\\\\\\\n    &\\xrightarrow{S} \\frac{A}{2} e^{j\\varphi} H\\left(e^{j \\omega_0}\\right) e^{j\\omega_0 n} + \\frac{A}{2} e^{-j\\varphi} H\\left(e^{-j \\omega_0}\\right) e^{j\\omega_0 n}  \\\\\\\\\n\\end{align}   This gives us,   \\begin{align}\n    y[n] &= \\frac{A}{2} e^{j\\varphi} H\\left(e^{j \\omega_0}\\right) e^{j\\omega_0 n} + \\frac{A}{2} e^{-j\\varphi} H\\left(e^{-j \\omega_0}\\right) e^{j\\omega_0 n} \\\\\\\\\n    &= A \\left|H\\left( e^{j \\omega_0} \\right)\\right|\\cos{\\left(\\omega_0 n + \\varphi - \\theta_0\\right)}\n\\end{align}", 
             "title": "Sinusoidal System Responses"
+        }, 
+        {
+            "location": "/2016-02-03/", 
+            "text": "Lecture 13 - Notes\n\n\nFebruary 3, 2016\n  \n\n\nThe Discrete-Time Fourier Transform\n\n\ndefinition\n: We define the \nDiscrete-Time Fourier Transform\n as,\n\n\n\n\n\n    X\\left( e^{j\\omega} \\right) = \\sum_{k = -\\infty}^{\\infty} x[k]e^{-j \\omega k}\n\n\n\n\n\nand the inverse transform,\n\n\n\n\n\\begin{align}\n    x[n] = \\frac{1}{2\\pi} \\int_{-\\pi}^{\\pi} X\\left(e^{j\\omega}\\right) e^{j \\omega n} ~d\\omega\n\\end{align}\n\n\n\n\nExample\n\n\nFind the Fourier transform of,\n\n\n\n\n\\begin{align}\n    x[n] = a^n u[n]\n\\end{align}\n\n\n\n\nwhere $|a| \\lt 1$.\n\n\nSo,\n\n\n\n\n\\begin{align}\n    X\\left( e^{j\\omega} \\right) &= \\sum_{k = -\\infty}^{\\infty} x[k]e^{-j \\omega k} \\\\\\\\ \n    &= \\sum_{k = -\\infty}^{\\infty} a^k u[k] e^{-j \\omega k} \\\\\\\\\n    &= \\sum_{k = 0}^{\\infty} a^k e^{-j \\omega k} \\\\\\\\\n    &= \\sum_{k = 0}^{\\infty} \\left( a e^{-j \\omega} \\right)^k \\\\\\\\\n    &= \\frac{1}{1 - a e^{-j \\omega}} \\\\\\\\\n\\end{align}\n\n\n\n\nExample\n\n\nFind the inverse Fourier transform of,\n\n\n\n\n\\begin{align}\n    X\\left(e^{j\\omega}\\right) = 1 + 3e^{-j\\omega} + 2e^{-j2\\omega} - 4e^{-j3\\omega} + e^{-j10\\omega}\n\\end{align}\n\n\n\n\nUsing the properties of Fourier transforms,\n\n\n\n\n\\begin{align}\n    x[n] = \\underbrace{\\delta[n]}_{1} + \n           \\underbrace{3\\delta[n-1]}_{3e^{-j \\omega}} + \n           \\underbrace{2\\delta[n-2]}_{2e^{-j2\\omega}} - \n           \\underbrace{4\\delta[n-3]}_{4e^{-j3\\omega}} + \n           \\underbrace{\\delta[n-10]}_{e^{-j10\\omega}}\n\\end{align}", 
+            "title": "2016 02 03"
+        }, 
+        {
+            "location": "/2016-02-03/#lecture-13-notes", 
+            "text": "February 3, 2016", 
+            "title": "Lecture 13 - Notes"
+        }, 
+        {
+            "location": "/2016-02-03/#the-discrete-time-fourier-transform", 
+            "text": "definition : We define the  Discrete-Time Fourier Transform  as,   \n    X\\left( e^{j\\omega} \\right) = \\sum_{k = -\\infty}^{\\infty} x[k]e^{-j \\omega k}   and the inverse transform,   \\begin{align}\n    x[n] = \\frac{1}{2\\pi} \\int_{-\\pi}^{\\pi} X\\left(e^{j\\omega}\\right) e^{j \\omega n} ~d\\omega\n\\end{align}", 
+            "title": "The Discrete-Time Fourier Transform"
+        }, 
+        {
+            "location": "/2016-02-03/#example", 
+            "text": "Find the Fourier transform of,   \\begin{align}\n    x[n] = a^n u[n]\n\\end{align}   where $|a| \\lt 1$.  So,   \\begin{align}\n    X\\left( e^{j\\omega} \\right) &= \\sum_{k = -\\infty}^{\\infty} x[k]e^{-j \\omega k} \\\\\\\\ \n    &= \\sum_{k = -\\infty}^{\\infty} a^k u[k] e^{-j \\omega k} \\\\\\\\\n    &= \\sum_{k = 0}^{\\infty} a^k e^{-j \\omega k} \\\\\\\\\n    &= \\sum_{k = 0}^{\\infty} \\left( a e^{-j \\omega} \\right)^k \\\\\\\\\n    &= \\frac{1}{1 - a e^{-j \\omega}} \\\\\\\\\n\\end{align}", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/2016-02-03/#example_1", 
+            "text": "Find the inverse Fourier transform of,   \\begin{align}\n    X\\left(e^{j\\omega}\\right) = 1 + 3e^{-j\\omega} + 2e^{-j2\\omega} - 4e^{-j3\\omega} + e^{-j10\\omega}\n\\end{align}   Using the properties of Fourier transforms,   \\begin{align}\n    x[n] = \\underbrace{\\delta[n]}_{1} + \n           \\underbrace{3\\delta[n-1]}_{3e^{-j \\omega}} + \n           \\underbrace{2\\delta[n-2]}_{2e^{-j2\\omega}} - \n           \\underbrace{4\\delta[n-3]}_{4e^{-j3\\omega}} + \n           \\underbrace{\\delta[n-10]}_{e^{-j10\\omega}}\n\\end{align}", 
+            "title": "Example"
         }
     ]
 }
