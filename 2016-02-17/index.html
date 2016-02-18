@@ -8,7 +8,7 @@
   
   <meta name="author" content="Ben Hawker">
   
-  <title>2016 02 03 - ELEC 310</title>
+  <title>2016 02 17 - ELEC 310</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "2016 02 03";
-    var mkdocs_page_input_path = "2016-02-03.md";
-    var mkdocs_page_url = "/2016-02-03/";
+    var mkdocs_page_name = "2016 02 17";
+    var mkdocs_page_input_path = "2016-02-17.md";
+    var mkdocs_page_url = "/2016-02-17/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -134,24 +134,24 @@
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">2016 02 03</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#lecture-13-notes">Lecture 13 - Notes</a></li>
-                
-                    <li><a class="toctree-l4" href="#the-discrete-time-fourier-transform">The Discrete-Time Fourier Transform</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../2016-02-03/">2016 02 03</a>
         
     </li>
 <li>
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../2016-02-17/">2016 02 17</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">2016 02 17</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#lecture-15-notes">Lecture 15 - Notes</a></li>
+                
+                    <li><a class="toctree-l4" href="#properties-of-fourier-transforms">Properties of Fourier Transforms</a></li>
+                
+            
+            </ul>
         
     </li>
 <li>
@@ -178,7 +178,7 @@
     
       
     
-    <li>2016 02 03</li>
+    <li>2016 02 17</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -192,54 +192,89 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="lecture-13-notes">Lecture 13 - Notes</h1>
-<p><strong>February 3, 2016</strong>  </p>
-<h2 id="the-discrete-time-fourier-transform">The Discrete-Time Fourier Transform</h2>
-<p><em>definition</em>: We define the <strong>Discrete-Time Fourier Transform</strong> as,</p>
-<p>
-<script type="math/tex; mode=display">
-    X\left( e^{j\omega} \right) = \sum_{k = -\infty}^{\infty} x[k]e^{-j \omega k}
-</script>
-</p>
-<p>and the inverse transform,</p>
+                <h1 id="lecture-15-notes">Lecture 15 - Notes</h1>
+<p><strong>February 17, 2016</strong>  </p>
+<h2 id="properties-of-fourier-transforms">Properties of Fourier Transforms</h2>
+<h3 id="symmetry">Symmetry</h3>
+<p>For an arbitrary $x[n]$,</p>
 <p>
 <script type="math/tex; mode=display">\begin{align}
-    x[n] = \frac{1}{2\pi} \int_{-\pi}^{\pi} X\left(e^{j\omega}\right) e^{j \omega n} ~d\omega
+    x[n] = \underbrace{x_\text{even}[n]}_{X_R\left(e^{j\omega}\right)} + \underbrace{x_\text{odd}[n]}_{X_I\left(e^{j\omega}\right)}
 \end{align}</script>
 </p>
-<h4 id="example">Example</h4>
-<p>Find the Fourier transform of,</p>
+<p>If,</p>
+<p>
+<script type="math/tex; mode=display">\begin{gather}
+    \left| X\left(e^{j\omega}\right) \right| = \left| X\left(e^{-j\omega}\right) \right| \\
+\end{gather}</script>
+</p>
+<p>then $x[n]$ is even. If,</p>
 <p>
 <script type="math/tex; mode=display">\begin{align}
-    x[n] = a^n u[n]
+    \angle X\left(e^{j\omega}\right) = \angle X\left(e^{-j\omega}\right)
 \end{align}</script>
 </p>
-<p>where $|a| \lt 1$.</p>
-<p>So,</p>
+<p>then $x[n]$ is odd.</p>
+<h3 id="time-and-frequency-shifting">Time and Frequency Shifting</h3>
+<p>To shift in the time domain,</p>
 <p>
 <script type="math/tex; mode=display">\begin{align}
-    X\left( e^{j\omega} \right) &= \sum_{k = -\infty}^{\infty} x[k]e^{-j \omega k} \\\\ 
-    &= \sum_{k = -\infty}^{\infty} a^k u[k] e^{-j \omega k} \\\\
-    &= \sum_{k = 0}^{\infty} a^k e^{-j \omega k} \\\\
-    &= \sum_{k = 0}^{\infty} \left( a e^{-j \omega} \right)^k \\\\
-    &= \frac{1}{1 - a e^{-j \omega}} \\\\
+    x[n - n_d] \overset F \longleftrightarrow e^{-jwn_d} X \left( e^{j\omega} \right)
 \end{align}</script>
 </p>
-<h4 id="example_1">Example</h4>
-<p>Find the inverse Fourier transform of,</p>
+<p>To shift in the frequency domain,</p>
+<h3 id="frequency-differentiation">Frequency Differentiation</h3>
+<p>To differentiate in the frequency domain,</p>
 <p>
 <script type="math/tex; mode=display">\begin{align}
-    X\left(e^{j\omega}\right) = 1 + 3e^{-j\omega} + 2e^{-j2\omega} - 4e^{-j3\omega} + e^{-j10\omega}
+    nx[n] \overset F \longleftrightarrow j \frac{d X \left( e^{j\omega} \right)}{d\omega}
 \end{align}</script>
 </p>
-<p>Using the properties of Fourier transforms,</p>
+<h5 id="example">Example</h5>
+<p>Find $X \left( e^{j\omega} \right)$ of,</p>
 <p>
 <script type="math/tex; mode=display">\begin{align}
-    x[n] = \underbrace{\delta[n]}_{1} + 
-           \underbrace{3\delta[n-1]}_{3e^{-j \omega}} + 
-           \underbrace{2\delta[n-2]}_{2e^{-j2\omega}} - 
-           \underbrace{4\delta[n-3]}_{4e^{-j3\omega}} + 
-           \underbrace{\delta[n-10]}_{e^{-j10\omega}}
+    x[n] = (n - 1)\left( \frac{1}{3} \right)^{\left| n \right|}
+\end{align}</script>
+</p>
+<h6 id="solution">Solution</h6>
+<p>Let,</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    x_1[n] &= \left( \frac{1}{3} \right)^{\left| n \right|} \\\\
+    &= \begin{cases} 
+      \left( \frac{1}{3} \right)^{ n} & n \ge 0 \\\\
+      \left( \frac{1}{3} \right)^{-n} & n \lt 0 \\\\
+   \end{cases}
+\end{align}</script>
+</p>
+<p>so,</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    X_1 \left( e^{j\omega} \right) &= \sum_{n = -\infty}^{\infty} \left( \frac{1}{3} \right)^{|n|} e^{-j\omega n} \\\\
+    &= \sum_{n = -\infty}^{0} \left( \frac{1}{3} \right)^{-n} e^{-j\omega n} + \sum_{n = 0}^{\infty} \left( \frac{1}{3} \right)^{n} e^{-j\omega n} - 1 \\\\
+    &= \sum_{p = 0}^{\infty} \left( \frac{1}{3} \right)^{p} e^{j\omega p} + \sum_{n = 0}^{\infty} \left( \frac{1}{3} \right)^{n} e^{-j\omega n} - 1 \\\\
+    &= \frac{1}{1 - \frac{1}{3} e^{j\omega}} + \frac{1}{1 - \frac{1}{3} e^{-j\omega}} - 1 \\\\
+    &= \frac{4}{5 - 3 \cos{\omega}}
+\end{align}</script>
+</p>
+<p>now,</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    x[n] &= n x_1[n] - x_1[n] \\\\
+    X \left( e^{j\omega} \right) &= j \frac{d X_1 \left( e^{j\omega} \right)}{d\omega} - X_1 \left( e^{j\omega} \right) \\\\
+    &~~\vdots \\\\
+    &= \frac{4}{5 - 3 \cos{\omega}} - j \frac{12 \sin{\omega}}{\left(5 - 3 \cos{\omega} \right)^2}
+\end{align}</script>
+</p>
+<h3 id="convolution">Convolution</h3>
+<p>To transform convolution in the time domain into the frequency domain,</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+    x_1[n] &\overset F \longleftrightarrow X_1 \left( e^{j\omega} \right) \\\\
+    x_2[n] &\overset F \longleftrightarrow X_2 \left( e^{j\omega} \right) \\\\
+    &~~\downarrow \\\\
+    x_1[n] * x_2[n] &\overset F \longleftrightarrow X_1 \left( e^{j\omega} \right)X_2 \left( e^{j\omega} \right) \\\\
 \end{align}</script>
 </p>
               
@@ -249,10 +284,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../2016-02-17/" class="btn btn-neutral float-right" title="2016 02 17">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../2016-01-29/" class="btn btn-neutral" title="2016 01 29"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../2016-02-03/" class="btn btn-neutral" title="2016 02 03"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -280,10 +313,8 @@
           <a href="https://github.com/UVicNotes/ELEC-310" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../2016-01-29/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../2016-02-03/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../2016-02-17/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
