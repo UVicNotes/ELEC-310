@@ -614,6 +614,46 @@
             "location": "/2016-02-17/#convolution", 
             "text": "To transform convolution in the time domain into the frequency domain,   \\begin{align}\n    x_1[n] &\\overset F \\longleftrightarrow X_1 \\left( e^{j\\omega} \\right) \\\\\\\\\n    x_2[n] &\\overset F \\longleftrightarrow X_2 \\left( e^{j\\omega} \\right) \\\\\\\\\n    &~~\\downarrow \\\\\\\\\n    x_1[n] * x_2[n] &\\overset F \\longleftrightarrow X_1 \\left( e^{j\\omega} \\right)X_2 \\left( e^{j\\omega} \\right) \\\\\\\\\n\\end{align}", 
             "title": "Convolution"
+        }, 
+        {
+            "location": "/2016-02-19/", 
+            "text": "Lecture 16 - Notes\n\n\nFebruary 19, 2016\n  \n\n\nI should take better notes.", 
+            "title": "2016 02 19"
+        }, 
+        {
+            "location": "/2016-02-19/#lecture-16-notes", 
+            "text": "February 19, 2016     I should take better notes.", 
+            "title": "Lecture 16 - Notes"
+        }, 
+        {
+            "location": "/2016-02-24/", 
+            "text": "Lecture 18 - Notes\n\n\nFebruary 24, 2016\n  \n\n\nRegion of Convergence\n\n\ndefintion\n: The \nregion of convergence\n, $\\mathcal S \\subset \\mathbb C$ of the Z-transform of $x[n]$ is,\n\n\n\n\n\\begin{aligned}\n    \\mathcal S = \\left\\{ z \\in \\mathbb C: \\sum_{n = -\\infty}^{\\infty} \\left| x[n] z^{-n}\\right| \\lt \\infty \\right\\}\n\\end{aligned}\n\n\n\n\nExample\n\n\nCompute the Z-Transform for $x[n] = a^n u[n]$\n\n\nConsider,\n\n\n\n\n\\begin{aligned}\n    x[n] &= a^n u[n] \\\\\\\\\n    X(z) &= \\sum_{n = -\\infty}^{\\infty} a^n u[n] z^{-n} \\\\\\\\\n    &= \\sum_{n = 0}^{\\infty} a^n z^{-n} \\\\\\\\\n    &= \\sum_{n = 0}^{\\infty} \\left( a z^{-1} \\right)^n \\\\\\\\\n    &= \\frac{1}{1 - a z^{-1}} \\\\\\\\\n    &= \\frac{z}{z - a}\n\\end{aligned}\n\n\n\n\nif $\\left| az^{-1} \\right| \\lt 1$.\n\n\nProperties\n\n\n\n\nThe Region of Convergence consist of a ring centered around the origin.\n\n\nThe Discrete-Time Fourier Transform of $x[n]$ is convergent if and only if the Region of Convergence of the Z-Transform of $x[n]$ contains the unit circle.\n\n\nThe Region of Convergence does not contain any poles.\n\n\nIf $x[n]$ is of finite duration, then the Region of Convergence is the entire z-plane, except possibly $z = 0$ or $z = \\infty$.\n\n\n\n\nAbsolute Summability\n\n\n$x[n]$ is \nabsolutely summable\n if and only if,\n\n\n\n\n\\begin{aligned}\n    \\sum_{n = -\\infty}^{\\infty} \\left| x[n] \\right| \\lt \\infty\n\\end{aligned}", 
+            "title": "2016 02 24"
+        }, 
+        {
+            "location": "/2016-02-24/#lecture-18-notes", 
+            "text": "February 24, 2016", 
+            "title": "Lecture 18 - Notes"
+        }, 
+        {
+            "location": "/2016-02-24/#region-of-convergence", 
+            "text": "defintion : The  region of convergence , $\\mathcal S \\subset \\mathbb C$ of the Z-transform of $x[n]$ is,   \\begin{aligned}\n    \\mathcal S = \\left\\{ z \\in \\mathbb C: \\sum_{n = -\\infty}^{\\infty} \\left| x[n] z^{-n}\\right| \\lt \\infty \\right\\}\n\\end{aligned}", 
+            "title": "Region of Convergence"
+        }, 
+        {
+            "location": "/2016-02-24/#example", 
+            "text": "Compute the Z-Transform for $x[n] = a^n u[n]$  Consider,   \\begin{aligned}\n    x[n] &= a^n u[n] \\\\\\\\\n    X(z) &= \\sum_{n = -\\infty}^{\\infty} a^n u[n] z^{-n} \\\\\\\\\n    &= \\sum_{n = 0}^{\\infty} a^n z^{-n} \\\\\\\\\n    &= \\sum_{n = 0}^{\\infty} \\left( a z^{-1} \\right)^n \\\\\\\\\n    &= \\frac{1}{1 - a z^{-1}} \\\\\\\\\n    &= \\frac{z}{z - a}\n\\end{aligned}   if $\\left| az^{-1} \\right| \\lt 1$.", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/2016-02-24/#properties", 
+            "text": "The Region of Convergence consist of a ring centered around the origin.  The Discrete-Time Fourier Transform of $x[n]$ is convergent if and only if the Region of Convergence of the Z-Transform of $x[n]$ contains the unit circle.  The Region of Convergence does not contain any poles.  If $x[n]$ is of finite duration, then the Region of Convergence is the entire z-plane, except possibly $z = 0$ or $z = \\infty$.", 
+            "title": "Properties"
+        }, 
+        {
+            "location": "/2016-02-24/#absolute-summability", 
+            "text": "$x[n]$ is  absolutely summable  if and only if,   \\begin{aligned}\n    \\sum_{n = -\\infty}^{\\infty} \\left| x[n] \\right| \\lt \\infty\n\\end{aligned}", 
+            "title": "Absolute Summability"
         }
     ]
 }
