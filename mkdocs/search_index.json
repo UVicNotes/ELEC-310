@@ -627,7 +627,7 @@
         }, 
         {
             "location": "/2016-02-24/", 
-            "text": "Lecture 18 - Notes\n\n\nFebruary 24, 2016\n  \n\n\nRegion of Convergence\n\n\ndefintion\n: The \nregion of convergence\n, $\\mathcal S \\subset \\mathbb C$ of the Z-transform of $x[n]$ is,\n\n\n\n\n\\begin{aligned}\n    \\mathcal S = \\left\\{ z \\in \\mathbb C: \\sum_{n = -\\infty}^{\\infty} \\left| x[n] z^{-n}\\right| \\lt \\infty \\right\\}\n\\end{aligned}\n\n\n\n\nExample\n\n\nCompute the Z-Transform for $x[n] = a^n u[n]$\n\n\nConsider,\n\n\n\n\n\\begin{aligned}\n    x[n] &= a^n u[n] \\\\\\\\\n    X(z) &= \\sum_{n = -\\infty}^{\\infty} a^n u[n] z^{-n} \\\\\\\\\n    &= \\sum_{n = 0}^{\\infty} a^n z^{-n} \\\\\\\\\n    &= \\sum_{n = 0}^{\\infty} \\left( a z^{-1} \\right)^n \\\\\\\\\n    &= \\frac{1}{1 - a z^{-1}} \\\\\\\\\n    &= \\frac{z}{z - a}\n\\end{aligned}\n\n\n\n\nif $\\left| az^{-1} \\right| \\lt 1$.\n\n\nProperties\n\n\n\n\nThe Region of Convergence consist of a ring centered around the origin.\n\n\nThe Discrete-Time Fourier Transform of $x[n]$ is convergent if and only if the Region of Convergence of the Z-Transform of $x[n]$ contains the unit circle.\n\n\nThe Region of Convergence does not contain any poles.\n\n\nIf $x[n]$ is of finite duration, then the Region of Convergence is the entire z-plane, except possibly $z = 0$ or $z = \\infty$.\n\n\n\n\nAbsolute Summability\n\n\n$x[n]$ is \nabsolutely summable\n if and only if,\n\n\n\n\n\\begin{aligned}\n    \\sum_{n = -\\infty}^{\\infty} \\left| x[n] \\right| \\lt \\infty\n\\end{aligned}", 
+            "text": "Lecture 18 - Notes\n\n\nFebruary 24, 2016\n  \n\n\nRegion of Convergence\n\n\ndefintion\n: The \nregion of convergence\n, $\\mathcal S \\subset \\mathbb C$ of the Z-transform of $x[n]$ is,\n\n\n\n\n\\begin{aligned}\n    \\mathcal S = \\left\\{ z \\in \\mathbb C: \\sum_{n = -\\infty}^{\\infty} \\left| x[n] z^{-n}\\right| \\lt \\infty \\right\\}\n\\end{aligned}\n\n\n\n\nExample\n\n\nCompute the Z-Transform for $x[n] = a^n u[n]$\n\n\nConsider,\n\n\n\n\n\\begin{aligned}\n    x[n] &= a^n u[n] \\\\\\\\\n    X(z) &= \\sum_{n = -\\infty}^{\\infty} a^n u[n] z^{-n} \\\\\\\\\n    &= \\sum_{n = 0}^{\\infty} a^n z^{-n} \\\\\\\\\n    &= \\sum_{n = 0}^{\\infty} \\left( a z^{-1} \\right)^n \\\\\\\\\n    &= \\frac{1}{1 - a z^{-1}} \\\\\\\\\n    &= \\frac{z}{z - a}\n\\end{aligned}\n\n\n\n\nif $\\left| az^{-1} \\right| \\lt 1$.\n\n\nAbsolute Summability\n\n\n$x[n]$ is \nabsolutely summable\n if and only if,\n\n\n\n\n\\begin{aligned}\n    \\sum_{n = -\\infty}^{\\infty} \\left| x[n] \\right| \\lt \\infty\n\\end{aligned}", 
             "title": "2016 02 24"
         }, 
         {
@@ -646,14 +646,34 @@
             "title": "Example"
         }, 
         {
-            "location": "/2016-02-24/#properties", 
-            "text": "The Region of Convergence consist of a ring centered around the origin.  The Discrete-Time Fourier Transform of $x[n]$ is convergent if and only if the Region of Convergence of the Z-Transform of $x[n]$ contains the unit circle.  The Region of Convergence does not contain any poles.  If $x[n]$ is of finite duration, then the Region of Convergence is the entire z-plane, except possibly $z = 0$ or $z = \\infty$.", 
-            "title": "Properties"
-        }, 
-        {
             "location": "/2016-02-24/#absolute-summability", 
             "text": "$x[n]$ is  absolutely summable  if and only if,   \\begin{aligned}\n    \\sum_{n = -\\infty}^{\\infty} \\left| x[n] \\right| \\lt \\infty\n\\end{aligned}", 
             "title": "Absolute Summability"
+        }, 
+        {
+            "location": "/2016-02-26/", 
+            "text": "Lecture 19 - Notes\n\n\nFebruary 26, 2016\n  \n\n\nRegion of Convergence Continued\n\n\nProperties\n\n\n\n\nThe Region of Convergence consist of a ring centered around the origin.\n\n\nThe Discrete-Time Fourier Transform of $x[n]$ is convergent if and only if the Region of Convergence of the Z-Transform of $x[n]$ contains the unit circle.\n\n\nThe Region of Convergence does not contain any poles.\n\n\nIf $x[n]$ is of finite duration, then the Region of Convergence is the entire z-plane, except possibly $z = 0$ or $z = \\infty$.\n\n\nIf $x[n]$ is a \nright-sided\n sequence the Region of Convergence extends outward from the outermost finite pole (possibly to $z = \\infty$).\n\n\nIf $x[n]$ is a \nleft-sided\n sequence the Region of Convergence extends inward from the innermost finite pole (possibly including $z=0$).\n\n\nIf $x[n]$ is a \ntwo-sided\n sequence then the Region of Convergence is a ring bounded by interior and exterior poles.\n\n\nThe Region of convergence must be a connect region.\n\n\nIf $x[n]$ and $y[n]$ have Regions of Convergence, $R_x$ and $R_y$, then a linear combination, $v[n] = ax[n] + by[n]$, will have the Region of Convergence that include the Regions of Convergence of $x[n]$ and $y[n]$, $R_v \\supseteq R_x \\cap R_y$.\n\n\n\n\nThese properties will be provided on the midterm.\n\n\nExample\n\n\nFind the region of convergence of\n\n\n\n\n\\begin{aligned}\n    X(z) = \\frac{1}{\n    \\left( 1 - \\frac{1}{3}z^{-1} \\right)\n    \\left( 1 - 2z^{-1} \\right)\n    }\n\\end{aligned}", 
+            "title": "2016 02 26"
+        }, 
+        {
+            "location": "/2016-02-26/#lecture-19-notes", 
+            "text": "February 26, 2016", 
+            "title": "Lecture 19 - Notes"
+        }, 
+        {
+            "location": "/2016-02-26/#region-of-convergence-continued", 
+            "text": "", 
+            "title": "Region of Convergence Continued"
+        }, 
+        {
+            "location": "/2016-02-26/#properties", 
+            "text": "The Region of Convergence consist of a ring centered around the origin.  The Discrete-Time Fourier Transform of $x[n]$ is convergent if and only if the Region of Convergence of the Z-Transform of $x[n]$ contains the unit circle.  The Region of Convergence does not contain any poles.  If $x[n]$ is of finite duration, then the Region of Convergence is the entire z-plane, except possibly $z = 0$ or $z = \\infty$.  If $x[n]$ is a  right-sided  sequence the Region of Convergence extends outward from the outermost finite pole (possibly to $z = \\infty$).  If $x[n]$ is a  left-sided  sequence the Region of Convergence extends inward from the innermost finite pole (possibly including $z=0$).  If $x[n]$ is a  two-sided  sequence then the Region of Convergence is a ring bounded by interior and exterior poles.  The Region of convergence must be a connect region.  If $x[n]$ and $y[n]$ have Regions of Convergence, $R_x$ and $R_y$, then a linear combination, $v[n] = ax[n] + by[n]$, will have the Region of Convergence that include the Regions of Convergence of $x[n]$ and $y[n]$, $R_v \\supseteq R_x \\cap R_y$.   These properties will be provided on the midterm.", 
+            "title": "Properties"
+        }, 
+        {
+            "location": "/2016-02-26/#example", 
+            "text": "Find the region of convergence of   \\begin{aligned}\n    X(z) = \\frac{1}{\n    \\left( 1 - \\frac{1}{3}z^{-1} \\right)\n    \\left( 1 - 2z^{-1} \\right)\n    }\n\\end{aligned}", 
+            "title": "Example"
         }
     ]
 }

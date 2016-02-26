@@ -8,7 +8,7 @@
   
   <meta name="author" content="Ben Hawker">
   
-  <title>2016 01 06 - ELEC 310</title>
+  <title>2016 02 26 - ELEC 310</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "2016 01 06";
-    var mkdocs_page_input_path = "2016-01-06.md";
-    var mkdocs_page_url = "/2016-01-06/";
+    var mkdocs_page_name = "2016 02 26";
+    var mkdocs_page_input_path = "2016-02-26.md";
+    var mkdocs_page_url = "/2016-02-26/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -71,23 +71,8 @@
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">2016 01 06</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#lecture-2-notes">Lecture 2 - Notes</a></li>
-                
-                    <li><a class="toctree-l4" href="#signal-representation">Signal Representation</a></li>
-                
-                    <li><a class="toctree-l4" href="#complex-numbers">Complex Numbers</a></li>
-                
-                    <li><a class="toctree-l4" href="#periodic-properties-of-discreet-time-signals">Periodic Properties of Discreet Time Signals</a></li>
-                
-                    <li><a class="toctree-l4" href="#condition-for-periodicity">Condition for Periodicity</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../2016-01-06/">2016 01 06</a>
         
     </li>
 <li>
@@ -177,8 +162,17 @@
 <li>
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../2016-02-26/">2016 02 26</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">2016 02 26</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#lecture-19-notes">Lecture 19 - Notes</a></li>
+                
+                    <li><a class="toctree-l4" href="#region-of-convergence-continued">Region of Convergence Continued</a></li>
+                
+            
+            </ul>
         
     </li>
 <li>
@@ -205,7 +199,7 @@
     
       
     
-    <li>2016 01 06</li>
+    <li>2016 02 26</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -219,132 +213,32 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="lecture-2-notes">Lecture 2 - Notes</h1>
-<p><strong>January 6, 2016</strong>  </p>
-<h2 id="signal-representation">Signal Representation</h2>
-<p>A sinusoid using 6 data points.</p>
-<p>
-<script type="math/tex; mode=display">
-    x(t) = \sum_{k=1}^{6} A_k \sin{(\omega_k t +\phi_k)}
-</script>
-</p>
-<table>
-<thead>
-<tr>
-<th align="center">$k$</th>
-<th align="center">$\omega_k$</th>
-<th align="center">$A_k$</th>
-<th align="center">$\phi_k$</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">0.2388</td>
-<td align="center">0.1897</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td align="center">2</td>
-<td align="center">...</td>
-<td align="center">...</td>
-</tr>
-<tr>
-<td align="center">3</td>
-<td align="center">$2\sqrt{3}$</td>
-<td align="center">...</td>
-<td align="center">...</td>
-</tr>
-<tr>
-<td align="center">4</td>
-<td align="center">8</td>
-<td align="center">...</td>
-<td align="center">...</td>
-</tr>
-<tr>
-<td align="center">5</td>
-<td align="center">10</td>
-<td align="center">...</td>
-<td align="center">...</td>
-</tr>
-<tr>
-<td align="center">6</td>
-<td align="center">12</td>
-<td align="center">...</td>
-<td align="center">...</td>
-</tr>
-</tbody>
-</table>
-<h2 id="complex-numbers">Complex Numbers</h2>
-<p>Let $z_0$ be a complex number with polar coordinates $(r_0,\Theta_0)$ and cartesian coordinates $(x_0,y_0)$. Then,</p>
-<p>
-<script type="math/tex; mode=display">\begin{align}
-    x_0 &= \mathbb{Re}\{z_0\} = r_0 \cos{\Theta_0} \newline
-    y_0 &= \mathbb{Im}\{z_0\} = r_0 \sin{\Theta_0}
-\end{align}</script>
-</p>
-<p>If we plot $r_0 = 2$ and $\Theta_0 = \frac{\pi}{4}$,</p>
-<h2 id="periodic-properties-of-discreet-time-signals">Periodic Properties of Discreet Time Signals</h2>
-<p>We can represent a discreet signal as,</p>
-<p>
-<script type="math/tex; mode=display">
-    x[n] = e^{j \omega_0 n}
-</script>
- and we know that,</p>
-<p>
-<script type="math/tex; mode=display">
-    e^{j (\omega_0 + 2\pi) n} = e^{j \omega_0 n}
- </script>
-</p>
-<p>Because the signals are periodic we choose an interval length of $2\pi$, and either $[ -\pi, \pi)$ or $[0,2\pi)$</p>
-<h2 id="condition-for-periodicity">Condition for Periodicity</h2>
-<p>A signal $x[n]$ is periodic with period $N$ if,</p>
-<p>
-<script type="math/tex; mode=display">
-    e^{j \omega_0 n} = e^{j \omega_0 (m+N)}
-</script>
-</p>
-<p>for all $m \in \mathbb{R}$.</p>
-<p>
-<script type="math/tex; mode=display">\begin{align}
-    e^{j \omega_0 n} = e^{j(\omega_0n + 2k\pi)} &= e^{j \omega_0 (m + N)} \newline
-    \omega_0n + 2k\pi &= \omega_0(m+N) \newline
-    2k \pi &= \omega_0 n
-\end{align}</script>
-</p>
+                <h1 id="lecture-19-notes">Lecture 19 - Notes</h1>
+<p><strong>February 26, 2016</strong>  </p>
+<h2 id="region-of-convergence-continued">Region of Convergence Continued</h2>
+<h3 id="properties">Properties</h3>
+<ol>
+<li>The Region of Convergence consist of a ring centered around the origin.</li>
+<li>The Discrete-Time Fourier Transform of $x[n]$ is convergent if and only if the Region of Convergence of the Z-Transform of $x[n]$ contains the unit circle.</li>
+<li>The Region of Convergence does not contain any poles.</li>
+<li>If $x[n]$ is of finite duration, then the Region of Convergence is the entire z-plane, except possibly $z = 0$ or $z = \infty$.</li>
+<li>If $x[n]$ is a <em>right-sided</em> sequence the Region of Convergence extends outward from the outermost finite pole (possibly to $z = \infty$).</li>
+<li>If $x[n]$ is a <em>left-sided</em> sequence the Region of Convergence extends inward from the innermost finite pole (possibly including $z=0$).</li>
+<li>If $x[n]$ is a <em>two-sided</em> sequence then the Region of Convergence is a ring bounded by interior and exterior poles.</li>
+<li>The Region of convergence must be a connect region.</li>
+<li>If $x[n]$ and $y[n]$ have Regions of Convergence, $R_x$ and $R_y$, then a linear combination, $v[n] = ax[n] + by[n]$, will have the Region of Convergence that include the Regions of Convergence of $x[n]$ and $y[n]$, $R_v \supseteq R_x \cap R_y$.</li>
+</ol>
+<p><strong>These properties will be provided on the midterm.</strong></p>
 <h4 id="example">Example</h4>
-<p>Determine the fundamental period of,</p>
+<p><em>Find the region of convergence of</em></p>
 <p>
-<script type="math/tex; mode=display">
-    x[n] = 2 \cos{\left(\frac{\pi}{4}n\right)} + \sin{\left(\frac{\pi}{8}n\right)} - 2 \cos{\left( \frac{\pi}{2}n + \frac{\pi}{6} \right)}
-</script>
+<script type="math/tex; mode=display">\begin{aligned}
+    X(z) = \frac{1}{
+    \left( 1 - \frac{1}{3}z^{-1} \right)
+    \left( 1 - 2z^{-1} \right)
+    }
+\end{aligned}</script>
 </p>
-<h5 id="solution">Solution</h5>
-<p>$N$ will be $\text{lcm}{(N_1,N_2,N_3)}$ where,</p>
-<p>
-<script type="math/tex; mode=display">
-    x[n] = 2 \underset{x_1}\cos{\left(\frac{\pi}{4}n\right)} + \underset{x_2}\sin{\left(\frac{\pi}{8}n\right)} - 2 \underset{x_3}\cos{\left( \frac{\pi}{2}n + \frac{\pi}{6} \right)}
-</script>
-</p>
-<p>So for $N_1$, since $x[n] = x[n + N_1]$ and $\omega_0 n = \omega_0 n + 2k\pi$</p>
-<p>
-<script type="math/tex; mode=display">\begin{align}
-    x_1[n + N_1] &= x_1[n] \newline
-    2 \cos{\left(\frac{\pi}{4}\left(n + N_1\right)\right)} &= 2 \cos{\left(\frac{\pi}{4}n\right)} \newline
-    2 \cos{\left(\frac{\pi}{4}\left(n + N_1\right)\right)} &= 2 \cos{\left(\frac{\pi}{4}n + 2k\pi\right)}  \newline
-    \frac{\pi}{4} (n + N_1) &= \frac{\pi}{4}n + 2k\pi \newline
-    n + N_1 &= n + 8k \newline
-    N_1 &= 8k \newline
-\end{align}</script>
-</p>
-<p>For $N_2$,</p>
-<p>
-<script type="math/tex; mode=display">\begin{align}
-    x_2[n + N_2] &= x_2[n] \newline
-\end{align}</script>
-</p>
-<p>and so on.</p>
               
             </div>
           </div>
@@ -352,10 +246,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../2016-01-08/" class="btn btn-neutral float-right" title="2016 01 08">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../2016-01-05/" class="btn btn-neutral" title="2016 01 05"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../2016-02-24/" class="btn btn-neutral" title="2016 02 24"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -383,10 +275,8 @@
           <a href="https://github.com/UVicNotes/ELEC-310" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../2016-01-05/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../2016-02-24/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../2016-01-08/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
