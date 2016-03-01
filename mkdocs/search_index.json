@@ -674,6 +674,36 @@
             "location": "/2016-02-26/#example", 
             "text": "Find the region of convergence of   \\begin{aligned}\n    X(z) = \\frac{1}{\n    \\left( 1 - \\frac{1}{3}z^{-1} \\right)\n    \\left( 1 - 2z^{-1} \\right)\n    }\n\\end{aligned}", 
             "title": "Example"
+        }, 
+        {
+            "location": "/2016-03-01/", 
+            "text": "Lecture 20 - Notes\n\n\nMarch 1, 2016\n  \n\n\nThe Inverse Z-Transform\n\n\nIf we express the Z-transform as a Fourier Transform of an equally weighted sequence,\n\n\n\n\n\\begin{aligned}\n    x[n] = \\frac{1}{2 \\pi j} \\oint X(z) z^{n-1} ~dz\n\\end{aligned}\n\n\n\n\nFor rational Z-transforms we can compute the inverse Z-transforms alternate ways,\n\n\n\n\nInspection\n\n\nPartial Fraction Expansion\n\n\nPower Series Expansion\n\n\n\n\nInspection\n\n\nUse a table of Z-transform properties and pairs to convert back to the time domain.\n\n\ne.g.\n\n\nDetermine $h[n]$ given,\n\n\n\n\n\\begin{aligned}\n    H(z) = \\frac{1 - z^{-1}}{1 + \\frac{3}{4} z^{-1}}\n\\end{aligned}\n\n\n\n\nConsider,\n\n\n\n\n\\begin{aligned}\n    H(z) &= \\frac{1 - z^{-1}}{1 + \\frac{3}{4} z^{-1}} \\\\\\\\\n    &= \\underbrace{\\frac{1}{1 + \\frac{3}{4} z^{-1}}}_\\text{exponential} - \\underbrace{\\frac{z^{-1}}{1 + \\frac{3}{4} z^{-1}}}_\\text{shifted exponential} \\\\\\\\\n    &\\downarrow\\\\\\\\\n    h[n] &= \\left( \\frac{3}{4} \\right)^n u[n] - \\left( \\frac{3}{4} \\right)^{n-1} u[n-1]\n\\end{aligned}\n\n\n\n\nPartial Fraction Expansion\n\n\nExpand two sums which are partial fractions,\n\n\n\n\n\\begin{aligned}\n    X(z) &= \\frac{\\sum_{k=0}^M b_k z^{-k}}{\\sum_{k=0}^N a_k z^{-k}} \\\\\\\\\n    &\\downarrow \\\\\\\\\n    X(z) &= \\sum_{k=1}^N \\frac{A_k}{1-d_k z^-1}\n\\end{aligned}\n\n\n\n\ne.g.\n\n\nDetermine the inverse Z-transform of,\n\n\n\n\n\\begin{aligned}\n    X(z) &= \\frac{3z^2 - \\frac{5}{6}z}{\\left(z - \\frac{1}{4}\\right)\\left(z - \\frac{1}{3}\\right)}\n\\end{aligned}\n\n\n\n\nwhere $\\left| z \\right| \\lt \\frac{1}{3}$.\n\n\nWe identify $M = 1$ and $N = 2$ and perform the partial fraction expansion,\n\n\n\n\n\\begin{aligned}\n    \\frac{3z - \\frac{5}{6}z}{\\left(z - \\frac{1}{4}\\right)\\left(z - \\frac{1}{3}\\right)} &= \\frac{A}{\\left(z - \\frac{1}{4}\\right)} + \\frac{B}{\\left(z - \\frac{1}{3}\\right)} \\\\\\\\\n    3z^2 - \\frac{5}{6}z  &= A \\left(z - \\frac{1}{3}\\right) + B \\left(z - \\frac{1}{4}\\right) \\\\\\\\\n\\end{aligned}\n\n\n\n\nTODO\n\n\nPower Series Expansion\n\n\n\n\n\\begin{aligned}\n    X(z) &= \\frac{\\sum_{k=0}^M b_k z^{-k}}{\\sum_{k=0}^N a_k z^{-k}} \\\\\\\\\n    &\\downarrow \\\\\\\\\n    X(z) &= \\sum_{n=-\\infty}^{+\\infty} x[n]z^{-1}\n\\end{aligned}\n\n\n\n\ne.g.\n\n\nDetermine the inverse Z-transform of,\n\n\n\n\n\\begin{aligned}\n    X(z) &= (1 + 2z)(1 + 3z^{-1})\n\\end{aligned}\n\n\n\n\nStart by expanding,\n\n\n\n\n\\begin{aligned}\n    X(z) &= (1 + 2z)(1 + 3z^{-1}) \\\\\\\\\n    &= 1 - 2z + 3z^{-1} + 6 \\\\\\\\\n    &= 3z^{-1} + 7 - 2z \\\\\\\n    &\\downarrow \\\\\\\\\n    x[n] &= \\begin{cases} \n      3 & n =  1 \\\\\\\\\n      7 & n =  0 \\\\\\\\\n      2 & n = -1 \\\\\\\\\n   \\end{cases}\n\\end{aligned}\n\n\n\n\ne.g.\n\n\nDetermine the inverse Z-transform of,\n\n\n\n\n\\begin{aligned}\n    X(z) &= \\frac{1}{1 + \\frac{1}{2}z^{-1}}\n\\end{aligned}\n\n\n\n\nTODO", 
+            "title": "2016 03 01"
+        }, 
+        {
+            "location": "/2016-03-01/#lecture-20-notes", 
+            "text": "March 1, 2016", 
+            "title": "Lecture 20 - Notes"
+        }, 
+        {
+            "location": "/2016-03-01/#the-inverse-z-transform", 
+            "text": "If we express the Z-transform as a Fourier Transform of an equally weighted sequence,   \\begin{aligned}\n    x[n] = \\frac{1}{2 \\pi j} \\oint X(z) z^{n-1} ~dz\n\\end{aligned}   For rational Z-transforms we can compute the inverse Z-transforms alternate ways,   Inspection  Partial Fraction Expansion  Power Series Expansion", 
+            "title": "The Inverse Z-Transform"
+        }, 
+        {
+            "location": "/2016-03-01/#inspection", 
+            "text": "Use a table of Z-transform properties and pairs to convert back to the time domain.  e.g.  Determine $h[n]$ given,   \\begin{aligned}\n    H(z) = \\frac{1 - z^{-1}}{1 + \\frac{3}{4} z^{-1}}\n\\end{aligned}   Consider,   \\begin{aligned}\n    H(z) &= \\frac{1 - z^{-1}}{1 + \\frac{3}{4} z^{-1}} \\\\\\\\\n    &= \\underbrace{\\frac{1}{1 + \\frac{3}{4} z^{-1}}}_\\text{exponential} - \\underbrace{\\frac{z^{-1}}{1 + \\frac{3}{4} z^{-1}}}_\\text{shifted exponential} \\\\\\\\\n    &\\downarrow\\\\\\\\\n    h[n] &= \\left( \\frac{3}{4} \\right)^n u[n] - \\left( \\frac{3}{4} \\right)^{n-1} u[n-1]\n\\end{aligned}", 
+            "title": "Inspection"
+        }, 
+        {
+            "location": "/2016-03-01/#partial-fraction-expansion", 
+            "text": "Expand two sums which are partial fractions,   \\begin{aligned}\n    X(z) &= \\frac{\\sum_{k=0}^M b_k z^{-k}}{\\sum_{k=0}^N a_k z^{-k}} \\\\\\\\\n    &\\downarrow \\\\\\\\\n    X(z) &= \\sum_{k=1}^N \\frac{A_k}{1-d_k z^-1}\n\\end{aligned}   e.g.  Determine the inverse Z-transform of,   \\begin{aligned}\n    X(z) &= \\frac{3z^2 - \\frac{5}{6}z}{\\left(z - \\frac{1}{4}\\right)\\left(z - \\frac{1}{3}\\right)}\n\\end{aligned}   where $\\left| z \\right| \\lt \\frac{1}{3}$.  We identify $M = 1$ and $N = 2$ and perform the partial fraction expansion,   \\begin{aligned}\n    \\frac{3z - \\frac{5}{6}z}{\\left(z - \\frac{1}{4}\\right)\\left(z - \\frac{1}{3}\\right)} &= \\frac{A}{\\left(z - \\frac{1}{4}\\right)} + \\frac{B}{\\left(z - \\frac{1}{3}\\right)} \\\\\\\\\n    3z^2 - \\frac{5}{6}z  &= A \\left(z - \\frac{1}{3}\\right) + B \\left(z - \\frac{1}{4}\\right) \\\\\\\\\n\\end{aligned}   TODO", 
+            "title": "Partial Fraction Expansion"
+        }, 
+        {
+            "location": "/2016-03-01/#power-series-expansion", 
+            "text": "\\begin{aligned}\n    X(z) &= \\frac{\\sum_{k=0}^M b_k z^{-k}}{\\sum_{k=0}^N a_k z^{-k}} \\\\\\\\\n    &\\downarrow \\\\\\\\\n    X(z) &= \\sum_{n=-\\infty}^{+\\infty} x[n]z^{-1}\n\\end{aligned}   e.g.  Determine the inverse Z-transform of,   \\begin{aligned}\n    X(z) &= (1 + 2z)(1 + 3z^{-1})\n\\end{aligned}   Start by expanding,   \\begin{aligned}\n    X(z) &= (1 + 2z)(1 + 3z^{-1}) \\\\\\\\\n    &= 1 - 2z + 3z^{-1} + 6 \\\\\\\\\n    &= 3z^{-1} + 7 - 2z \\\\\\\n    &\\downarrow \\\\\\\\\n    x[n] &= \\begin{cases} \n      3 & n =  1 \\\\\\\\\n      7 & n =  0 \\\\\\\\\n      2 & n = -1 \\\\\\\\\n   \\end{cases}\n\\end{aligned}   e.g.  Determine the inverse Z-transform of,   \\begin{aligned}\n    X(z) &= \\frac{1}{1 + \\frac{1}{2}z^{-1}}\n\\end{aligned}   TODO", 
+            "title": "Power Series Expansion"
         }
     ]
 }

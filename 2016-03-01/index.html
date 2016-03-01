@@ -8,7 +8,7 @@
   
   <meta name="author" content="Ben Hawker">
   
-  <title>2016 01 26 - ELEC 310</title>
+  <title>2016 03 01 - ELEC 310</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "2016 01 26";
-    var mkdocs_page_input_path = "2016-01-26.md";
-    var mkdocs_page_url = "/2016-01-26/";
+    var mkdocs_page_name = "2016 03 01";
+    var mkdocs_page_input_path = "2016-03-01.md";
+    var mkdocs_page_url = "/2016-03-01/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -113,19 +113,8 @@
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">2016 01 26</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#lecture-10-notes">Lecture 10 - Notes</a></li>
-                
-                    <li><a class="toctree-l4" href="#convolution-properties">Convolution Properties</a></li>
-                
-                    <li><a class="toctree-l4" href="#lti-systems-from-their-unit-impulse">LTI Systems from their Unit Impulse</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../2016-01-26/">2016 01 26</a>
         
     </li>
 <li>
@@ -180,8 +169,17 @@
 <li>
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../2016-03-01/">2016 03 01</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">2016 03 01</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#lecture-20-notes">Lecture 20 - Notes</a></li>
+                
+                    <li><a class="toctree-l4" href="#the-inverse-z-transform">The Inverse Z-Transform</a></li>
+                
+            
+            </ul>
         
     </li>
 <li>
@@ -208,7 +206,7 @@
     
       
     
-    <li>2016 01 26</li>
+    <li>2016 03 01</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -222,57 +220,101 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="lecture-10-notes">Lecture 10 - Notes</h1>
-<p><strong>January 26, 2016</strong>  </p>
-<p>We are going over what happened last week again this week.</p>
-<h2 id="convolution-properties">Convolution Properties</h2>
-<h3 id="commutativity">Commutativity</h3>
+                <h1 id="lecture-20-notes">Lecture 20 - Notes</h1>
+<p><strong>March 1, 2016</strong>  </p>
+<h2 id="the-inverse-z-transform">The Inverse Z-Transform</h2>
+<p>If we express the Z-transform as a Fourier Transform of an equally weighted sequence,</p>
 <p>
-<script type="math/tex; mode=display">
-    x * h = h * x
-</script>
+<script type="math/tex; mode=display">\begin{aligned}
+    x[n] = \frac{1}{2 \pi j} \oint X(z) z^{n-1} ~dz
+\end{aligned}</script>
 </p>
-<h3 id="associativity">Associativity</h3>
+<p>For rational Z-transforms we can compute the inverse Z-transforms alternate ways,</p>
+<ul>
+<li><a href="#inspection">Inspection</a></li>
+<li><a href="#partial-fraction-expansion">Partial Fraction Expansion</a></li>
+<li><a href="#power-series-expansion">Power Series Expansion</a></li>
+</ul>
+<h3 id="inspection">Inspection</h3>
+<p>Use a table of Z-transform properties and pairs to convert back to the time domain.</p>
+<p><strong>e.g.</strong></p>
+<p><em>Determine $h[n]$ given,</em></p>
 <p>
-<script type="math/tex; mode=display">
-    x * (y  * h) = (x  * g)  * h
-</script>
+<script type="math/tex; mode=display">\begin{aligned}
+    H(z) = \frac{1 - z^{-1}}{1 + \frac{3}{4} z^{-1}}
+\end{aligned}</script>
 </p>
-<h3 id="distributivity">Distributivity</h3>
+<p>Consider,</p>
 <p>
-<script type="math/tex; mode=display">
-    x  * (y + h) = (x  * y) + (y  * h)
-</script>
+<script type="math/tex; mode=display">\begin{aligned}
+    H(z) &= \frac{1 - z^{-1}}{1 + \frac{3}{4} z^{-1}} \\\\
+    &= \underbrace{\frac{1}{1 + \frac{3}{4} z^{-1}}}_\text{exponential} - \underbrace{\frac{z^{-1}}{1 + \frac{3}{4} z^{-1}}}_\text{shifted exponential} \\\\
+    &\downarrow\\\\
+    h[n] &= \left( \frac{3}{4} \right)^n u[n] - \left( \frac{3}{4} \right)^{n-1} u[n-1]
+\end{aligned}</script>
 </p>
-<h3 id="associativity-with-scalar-multiplication">Associativity with scalar multiplication</h3>
+<h3 id="partial-fraction-expansion">Partial Fraction Expansion</h3>
+<p>Expand two sums which are partial fractions,</p>
 <p>
-<script type="math/tex; mode=display">
-    a (y  * g) = (a f)  * g
-</script>
+<script type="math/tex; mode=display">\begin{aligned}
+    X(z) &= \frac{\sum_{k=0}^M b_k z^{-k}}{\sum_{k=0}^N a_k z^{-k}} \\\\
+    &\downarrow \\\\
+    X(z) &= \sum_{k=1}^N \frac{A_k}{1-d_k z^-1}
+\end{aligned}</script>
 </p>
-<h2 id="lti-systems-from-their-unit-impulse">LTI Systems from their Unit Impulse</h2>
-<h3 id="causal">Causal</h3>
-<p><em>definition</em>: A Linear time invariant system is <strong>causal</strong> if the unit impulse, $h[n]$, is zero for all $n$ greater than zero, i.e.,</p>
+<p><strong>e.g.</strong></p>
+<p><em>Determine the inverse Z-transform of,</em></p>
 <p>
-<script type="math/tex; mode=display">
-    h[n] = 0 \text{ for all } n > 0
-</script>
+<script type="math/tex; mode=display">\begin{aligned}
+    X(z) &= \frac{3z^2 - \frac{5}{6}z}{\left(z - \frac{1}{4}\right)\left(z - \frac{1}{3}\right)}
+\end{aligned}</script>
 </p>
-<h3 id="stability">Stability</h3>
-<p><em>definition</em>: A Linear time invariant system is <strong>stable</strong> if and only if,</p>
+<p><em>where $\left| z \right| \lt \frac{1}{3}$.</em></p>
+<p>We identify $M = 1$ and $N = 2$ and perform the partial fraction expansion,</p>
 <p>
-<script type="math/tex; mode=display">
-    \sum_{n=-\infty}^{\infty} \left| h[n] \right| \lt \infty
-</script>
+<script type="math/tex; mode=display">\begin{aligned}
+    \frac{3z - \frac{5}{6}z}{\left(z - \frac{1}{4}\right)\left(z - \frac{1}{3}\right)} &= \frac{A}{\left(z - \frac{1}{4}\right)} + \frac{B}{\left(z - \frac{1}{3}\right)} \\\\
+    3z^2 - \frac{5}{6}z  &= A \left(z - \frac{1}{3}\right) + B \left(z - \frac{1}{4}\right) \\\\
+\end{aligned}</script>
 </p>
-<p>and $h[n]$ is <em>absolutely summable</em> (a finite energy signal).</p>
-<h3 id="invertibility">Invertibility</h3>
-<p><em>definition</em>: A linear time invariant system is <strong>invertible</strong> if we can find another system that can perfectly reverse the transform of the system. In terms of $h[n]$ the system is invertible if there exist $h^\prime[n]$ such that,</p>
+<p><strong>TODO</strong></p>
+<h3 id="power-series-expansion">Power Series Expansion</h3>
 <p>
-<script type="math/tex; mode=display">
-    h[n] * h^\prime[n] = \delta[n].
- </script>
+<script type="math/tex; mode=display">\begin{aligned}
+    X(z) &= \frac{\sum_{k=0}^M b_k z^{-k}}{\sum_{k=0}^N a_k z^{-k}} \\\\
+    &\downarrow \\\\
+    X(z) &= \sum_{n=-\infty}^{+\infty} x[n]z^{-1}
+\end{aligned}</script>
 </p>
+<p><strong>e.g.</strong></p>
+<p><em>Determine the inverse Z-transform of,</em></p>
+<p>
+<script type="math/tex; mode=display">\begin{aligned}
+    X(z) &= (1 + 2z)(1 + 3z^{-1})
+\end{aligned}</script>
+</p>
+<p>Start by expanding,</p>
+<p>
+<script type="math/tex; mode=display">\begin{aligned}
+    X(z) &= (1 + 2z)(1 + 3z^{-1}) \\\\
+    &= 1 - 2z + 3z^{-1} + 6 \\\\
+    &= 3z^{-1} + 7 - 2z \\\
+    &\downarrow \\\\
+    x[n] &= \begin{cases} 
+      3 & n =  1 \\\\
+      7 & n =  0 \\\\
+      2 & n = -1 \\\\
+   \end{cases}
+\end{aligned}</script>
+</p>
+<p><strong>e.g.</strong></p>
+<p><em>Determine the inverse Z-transform of,</em></p>
+<p>
+<script type="math/tex; mode=display">\begin{aligned}
+    X(z) &= \frac{1}{1 + \frac{1}{2}z^{-1}}
+\end{aligned}</script>
+</p>
+<p><strong>TODO</strong></p>
               
             </div>
           </div>
@@ -280,10 +322,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../2016-01-27/" class="btn btn-neutral float-right" title="2016 01 27">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../2016-01-19/" class="btn btn-neutral" title="2016 01 19"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../2016-02-26/" class="btn btn-neutral" title="2016 02 26"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -311,10 +351,8 @@
           <a href="https://github.com/UVicNotes/ELEC-310" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../2016-01-19/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../2016-02-26/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../2016-01-27/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
