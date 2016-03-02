@@ -8,7 +8,7 @@
   
   <meta name="author" content="Ben Hawker">
   
-  <title>2016 01 19 - ELEC 310</title>
+  <title>2016 03 02 - ELEC 310</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "2016 01 19";
-    var mkdocs_page_input_path = "2016-01-19.md";
-    var mkdocs_page_url = "/2016-01-19/";
+    var mkdocs_page_name = "2016 03 02";
+    var mkdocs_page_input_path = "2016-03-02.md";
+    var mkdocs_page_url = "/2016-03-02/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -106,20 +106,8 @@
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">2016 01 19</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#lecture-7-notes">Lecture 7 - Notes</a></li>
-                
-                    <li><a class="toctree-l4" href="#ways-to-describe-lti-systems">Ways to Describe LTI Systems</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#difference-equations">Difference Equations</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../2016-01-19/">2016 01 19</a>
         
     </li>
 <li>
@@ -188,8 +176,17 @@
 <li>
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../2016-03-02/">2016 03 02</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">2016 03 02</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#lecture-21-notes">Lecture 21 - Notes</a></li>
+                
+                    <li><a class="toctree-l4" href="#z-transform">Z-Transform</a></li>
+                
+            
+            </ul>
         
     </li>
 <li>
@@ -216,7 +213,7 @@
     
       
     
-    <li>2016 01 19</li>
+    <li>2016 03 02</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -230,42 +227,32 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="lecture-7-notes">Lecture 7 - Notes</h1>
-<p><strong>January 19, 2016</strong>  </p>
-<h2 id="ways-to-describe-lti-systems">Ways to Describe LTI Systems</h2>
-<ol>
-<li><a href="../2016-01-13/#linear-time-invariant-systems">The Impulse Response</a></li>
-<li><a href="#difference-equations">Difference Equations</a></li>
-<li>Frequency Response</li>
-<li>Transfer Function</li>
-</ol>
-<h1 id="difference-equations">Difference Equations</h1>
-<p><em>definition</em>: The <strong>Difference Equation</strong> is a formula for computing an output sample at time $n$ based on past and present input samples and past output samples in the time domain (<a href="https://ccrma.stanford.edu/~jos/fp/Difference_Equation_I.html">source</a>). We may write the general, causal, LTI difference equation as follows: </p>
+                <h1 id="lecture-21-notes">Lecture 21 - Notes</h1>
+<p><strong>March 2, 2016</strong>  </p>
+<h2 id="z-transform">Z-Transform</h2>
+<h3 id="properties">Properties</h3>
+<p>The Z-transforms properties strictly apply to a certain region of convergence.</p>
+<ul>
+<li><strong>Causal</strong>: $H(z)$ has a region of convergence representing the exterior of a circle including $z = \infty$.</li>
+<li><strong>Anti-Causal</strong>: $H(z)$ has a region of convergence representing the interior of a circle including $z = 0$.</li>
+<li><strong>Stable</strong>: The region of convergence of $H(z)$ includes the unit circle.</li>
+</ul>
+<h3 id="multiple-regions-of-convergence">Multiple Regions of Convergence</h3>
+<p>Suppose,</p>
 <p>
-<script type="math/tex; mode=display">\begin{align}
-    a_0 y[n] + a_1 y[n - 1] + ... + a_N y[n - N] = b_0 x[n] &+ b_1 x[n-1] + ... + b_M x[n - M] \newline
-\end{align}</script>
+<script type="math/tex; mode=display">\begin{aligned}
+    \left|z_1\right| \le \left|z_2\right| \le \ldots \le \left|z_k\right|
+\end{aligned}</script>
 </p>
-<p>isolating $y[n]$ (and scaling the coefficients by $\frac{1}{a_0}$),</p>
+<p>the in general the regions of convergence will be,</p>
 <p>
-<script type="math/tex; mode=display">\begin{align}
-    y[n] = b_0 x[n] &+ b_1 x[n-1] + ... + b_M x[n - M] \newline
-    &- a_1 y[n - 1] - ... - a_N y[n - N] \newline
-\end{align}</script>
+<script type="math/tex; mode=display">\begin{aligned}
+    \text{ROC}_1 &\to z \lt \left|z_1\right| \\\\
+    \text{ROC}_2 &\to \left|z_1\right| \lt z \lt \left|z_2\right| \\\\
+    &~~\vdots \\\\
+    \text{ROC}_k &\to z \gt \left|z_k\right| \\\\
+\end{aligned}</script>
 </p>
-<p>or, more concisely,</p>
-<p>
-<script type="math/tex; mode=display">\begin{align}
-    y[n] &= \sum_{i=0}^{M} b_i x[n - i] - \sum_{j=1}^{N} a_j y[n-j]
-\end{align}</script>
-</p>
-<p>where $x$ is the input signal, $y$ is the output signal and $a_j, b_i, i, j$ are the constant coefficients. Alternatively, another way of writing the Difference Equation is,</p>
-<p>
-<script type="math/tex; mode=display">\begin{align}
-    \sum_{i=0}^{M} b_i x[n - i] = \sum_{j=0}^{N} a_j y[n-j]
-\end{align}</script>
-</p>
-<p>note the change of the bound $j$ to accommodate the inclusion of $y[n]$.</p>
               
             </div>
           </div>
@@ -273,10 +260,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../2016-01-26/" class="btn btn-neutral float-right" title="2016 01 26">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../2016-01-15/" class="btn btn-neutral" title="2016 01 15"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../2016-03-01/" class="btn btn-neutral" title="2016 03 01"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -304,10 +289,8 @@
           <a href="https://github.com/UVicNotes/ELEC-310" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../2016-01-15/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../2016-03-01/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../2016-01-26/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
