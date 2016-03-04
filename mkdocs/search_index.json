@@ -729,6 +729,21 @@
             "location": "/2016-03-02/#multiple-regions-of-convergence", 
             "text": "Suppose,   \\begin{aligned}\n    \\left|z_1\\right| \\le \\left|z_2\\right| \\le \\ldots \\le \\left|z_k\\right|\n\\end{aligned}   the in general the regions of convergence will be,   \\begin{aligned}\n    \\text{ROC}_1 &\\to z \\lt \\left|z_1\\right| \\\\\\\\\n    \\text{ROC}_2 &\\to \\left|z_1\\right| \\lt z \\lt \\left|z_2\\right| \\\\\\\\\n    &~~\\vdots \\\\\\\\\n    \\text{ROC}_k &\\to z \\gt \\left|z_k\\right| \\\\\\\\\n\\end{aligned}", 
             "title": "Multiple Regions of Convergence"
+        }, 
+        {
+            "location": "/2016-03-04/", 
+            "text": "Lecture 22 - Notes\n\n\nMarch 4, 2016\n  \n\n\nUnilateral Z-Transform\n\n\ndefinition\n: We define the \nUnilateral Z-transform\n as,\n\n\n\n\n\\begin{aligned}\n    \\tilde{X} (z) = \\sum_{n = 0}^{\\infty} x[n]z^{-n}\n\\end{aligned}\n\n\n\n\ne.g.\n\n\nConsider,\n\n\n\n\n\\begin{aligned}\n    y[n] - 5y[n-1] + 6y[n-2] = 3x[n-1] + 5x[n-2]\n\\end{aligned}\n\n\n\n\ngiven $x[n] = (0.5)^n u[n]$ what is y[n]?", 
+            "title": "2016 03 04"
+        }, 
+        {
+            "location": "/2016-03-04/#lecture-22-notes", 
+            "text": "March 4, 2016", 
+            "title": "Lecture 22 - Notes"
+        }, 
+        {
+            "location": "/2016-03-04/#unilateral-z-transform", 
+            "text": "definition : We define the  Unilateral Z-transform  as,   \\begin{aligned}\n    \\tilde{X} (z) = \\sum_{n = 0}^{\\infty} x[n]z^{-n}\n\\end{aligned}   e.g.  Consider,   \\begin{aligned}\n    y[n] - 5y[n-1] + 6y[n-2] = 3x[n-1] + 5x[n-2]\n\\end{aligned}   given $x[n] = (0.5)^n u[n]$ what is y[n]?", 
+            "title": "Unilateral Z-Transform"
         }
     ]
 }
