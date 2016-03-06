@@ -155,6 +155,8 @@
             
                 <li class="toctree-l3"><a href="#lecture-16-notes">Lecture 16 - Notes</a></li>
                 
+                    <li><a class="toctree-l4" href="#the-bilateral-z-transform">The Bilateral Z-Transform</a></li>
+                
             
             </ul>
         
@@ -234,7 +236,21 @@
               
                 <h1 id="lecture-16-notes">Lecture 16 - Notes</h1>
 <p><strong>February 19, 2016</strong>  </p>
-<p>I should take better notes.</p>
+<h2 id="the-bilateral-z-transform">The Bilateral Z-Transform</h2>
+<p><em>definition</em>: We define the <strong>Bilateral Z-Transform</strong>, for was given signal $x[n]$, as</p>
+<p>
+<script type="math/tex; mode=display">\begin{aligned}
+    X(z) &= \sum_{n=-\infty}^{\infty} x[n]z^{-n}
+\end{aligned}</script>
+</p>
+<p>where $z \in \mathbb C$.</p>
+<h3 id="fourier-transform-relationship">Fourier Transform Relationship</h3>
+<p>For values of $z$ in the region $|z|=1$, known as the unit circle, we can express the transform as a function of a single, real variable, $\omega$, by defining $z = e^{j\omega}$.  And the bi-lateral transform reduces to a Fourier series:</p>
+<p>
+<script type="math/tex; mode=display">\begin{aligned}
+    \sum_{n=-\infty}^{\infty} x[n]z^{-n} = \sum_{n=-\infty}^{\infty} x[n]e^{-j \omega n}
+\end{aligned}</script>
+</p>
               
             </div>
           </div>
