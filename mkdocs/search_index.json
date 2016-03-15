@@ -747,7 +747,7 @@
         }, 
         {
             "location": "/2016-03-04/", 
-            "text": "Lecture 22 - Notes\n\n\nMarch 4, 2016\n  \n\n\nUnilateral Z-Transform\n\n\ndefinition\n: We define the \nUnilateral Z-transform\n as,\n\n\n\n\n\\begin{aligned}\n    \\tilde{X} (z) = \\sum_{n = 0}^{\\infty} x[n]z^{-n}\n\\end{aligned}\n\n\n\n\ne.g.\n\n\nConsider,\n\n\n\n\n\\begin{aligned}\n    y[n] - 5y[n-1] + 6y[n-2] = 3x[n-1] + 5x[n-2]\n\\end{aligned}\n\n\n\n\ngiven $x[n] = (0.5)^n u[n]$ what is y[n]?", 
+            "text": "Lecture 22 - Notes\n\n\nMarch 4, 2016\n  \n\n\nUnilateral Z-Transform\n\n\ndefinition\n: We define the \nUnilateral Z-transform\n as,\n\n\n\n\n\\begin{aligned}\n    \\tilde{X} (z) = \\sum_{\\color{red}{n = 0}}^{\\infty} x[n]z^{-n}\n\\end{aligned}\n\n\n\n\nSo the unilateral z-transform only looks at the right hand side of $x[n]$.\n\n\ne.g.\n\n\nConsider,\n\n\n\n\n\\begin{aligned}\n    y[n] - 5y[n-1] + 6y[n-2] = 3x[n-1] + 5x[n-2]\n\\end{aligned}\n\n\n\n\ngiven $x[n] = (0.5)^n u[n]$ what is y[n]?", 
             "title": "2016 03 04"
         }, 
         {
@@ -757,8 +757,33 @@
         }, 
         {
             "location": "/2016-03-04/#unilateral-z-transform", 
-            "text": "definition : We define the  Unilateral Z-transform  as,   \\begin{aligned}\n    \\tilde{X} (z) = \\sum_{n = 0}^{\\infty} x[n]z^{-n}\n\\end{aligned}   e.g.  Consider,   \\begin{aligned}\n    y[n] - 5y[n-1] + 6y[n-2] = 3x[n-1] + 5x[n-2]\n\\end{aligned}   given $x[n] = (0.5)^n u[n]$ what is y[n]?", 
+            "text": "definition : We define the  Unilateral Z-transform  as,   \\begin{aligned}\n    \\tilde{X} (z) = \\sum_{\\color{red}{n = 0}}^{\\infty} x[n]z^{-n}\n\\end{aligned}   So the unilateral z-transform only looks at the right hand side of $x[n]$.  e.g.  Consider,   \\begin{aligned}\n    y[n] - 5y[n-1] + 6y[n-2] = 3x[n-1] + 5x[n-2]\n\\end{aligned}   given $x[n] = (0.5)^n u[n]$ what is y[n]?", 
             "title": "Unilateral Z-Transform"
+        }, 
+        {
+            "location": "/2016-03-15/", 
+            "text": "Lecture 26 - Notes\n\n\nMarch 15, 2016\n  \n\n\nSampling\n\n\nQuestion\n: Under what conditions can we reconstruct the original signal, $x(t)$, from its discrete, sampled, version, $x[n]$?\n\n\nTo construct an \nimpulse train\n we will use a sampling function $s(t)$, where,\n\n\n\n\n\\begin{aligned}\n    x_s(t) = x_c(t) \\cdot s(t)\n\\end{aligned}\n\n\n\n\nWe can recover the signal $x_c(t)$ using an ideal lowpass filter.\n\n\nExample\n\n\nA  sinusoidal input signal, $x(t) = \\cos{(10t)}$, is sampled with $\\Omega _s = 90$. A signal $y(t)$ is generated using the bandpass filter,\n\n\n\n\n\\begin{aligned}\n    H\\left( j\\Omega \\right) = \\begin{cases}\n        T & \\text{for}~90 \\lt \\Omega \\lt 180 \\\\\\\\\n        0 & \\text{otherwise}\n    \\end{cases}\n\\end{aligned}\n\n\n\n\nand a sampling function,\n\n\n\n\n\\begin{aligned}\n    s(t) = \\sum_{k = -\\infty}^{\\infty} \\delta(t - kT)\n\\end{aligned}\n\n\n\n\nwhere $T = \\frac{2\\pi}{90}$. Find $y(t)$.\n\n\nDiscrete Time Processing of Continuous Time Signals\n\n\n\n\n\\begin{aligned}\n    X_d\\left(e^{j\\omega}\\right) = \\frac{1}{T} \\sum_{k=-\\infty}^{\\infty} X_C \\left( j \\left( \\frac{\\omega}{T} - 2k \\frac{\\pi}{T} \\right) \\right)\n\\end{aligned}", 
+            "title": "2016 03 15"
+        }, 
+        {
+            "location": "/2016-03-15/#lecture-26-notes", 
+            "text": "March 15, 2016", 
+            "title": "Lecture 26 - Notes"
+        }, 
+        {
+            "location": "/2016-03-15/#sampling", 
+            "text": "Question : Under what conditions can we reconstruct the original signal, $x(t)$, from its discrete, sampled, version, $x[n]$?  To construct an  impulse train  we will use a sampling function $s(t)$, where,   \\begin{aligned}\n    x_s(t) = x_c(t) \\cdot s(t)\n\\end{aligned}   We can recover the signal $x_c(t)$ using an ideal lowpass filter.", 
+            "title": "Sampling"
+        }, 
+        {
+            "location": "/2016-03-15/#example", 
+            "text": "A  sinusoidal input signal, $x(t) = \\cos{(10t)}$, is sampled with $\\Omega _s = 90$. A signal $y(t)$ is generated using the bandpass filter,   \\begin{aligned}\n    H\\left( j\\Omega \\right) = \\begin{cases}\n        T & \\text{for}~90 \\lt \\Omega \\lt 180 \\\\\\\\\n        0 & \\text{otherwise}\n    \\end{cases}\n\\end{aligned}   and a sampling function,   \\begin{aligned}\n    s(t) = \\sum_{k = -\\infty}^{\\infty} \\delta(t - kT)\n\\end{aligned}   where $T = \\frac{2\\pi}{90}$. Find $y(t)$.", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/2016-03-15/#discrete-time-processing-of-continuous-time-signals", 
+            "text": "\\begin{aligned}\n    X_d\\left(e^{j\\omega}\\right) = \\frac{1}{T} \\sum_{k=-\\infty}^{\\infty} X_C \\left( j \\left( \\frac{\\omega}{T} - 2k \\frac{\\pi}{T} \\right) \\right)\n\\end{aligned}", 
+            "title": "Discrete Time Processing of Continuous Time Signals"
         }
     ]
 }

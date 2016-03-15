@@ -8,7 +8,7 @@
   
   <meta name="author" content="Ben Hawker">
   
-  <title>2016 01 12 - ELEC 310</title>
+  <title>2016 03 15 - ELEC 310</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "2016 01 12";
-    var mkdocs_page_input_path = "2016-01-12.md";
-    var mkdocs_page_url = "/2016-01-12/";
+    var mkdocs_page_name = "2016 03 15";
+    var mkdocs_page_input_path = "2016-03-15.md";
+    var mkdocs_page_url = "/2016-03-15/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -85,19 +85,8 @@
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">2016 01 12</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#lecture-4-notes">Lecture 4 - Notes</a></li>
-                
-                    <li><a class="toctree-l4" href="#energy-and-power-of-signals">Energy and Power of Signals</a></li>
-                
-                    <li><a class="toctree-l4" href="#discreet-time-systems">Discreet Time Systems</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../2016-01-12/">2016 01 12</a>
         
     </li>
 <li>
@@ -201,8 +190,17 @@
 <li>
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../2016-03-15/">2016 03 15</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">2016 03 15</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#lecture-26-notes">Lecture 26 - Notes</a></li>
+                
+                    <li><a class="toctree-l4" href="#sampling">Sampling</a></li>
+                
+            
+            </ul>
         
     </li>
 <li>
@@ -229,7 +227,7 @@
     
       
     
-    <li>2016 01 12</li>
+    <li>2016 03 15</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -243,97 +241,39 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="lecture-4-notes">Lecture 4 - Notes</h1>
-<p><strong>January 12, 2016</strong>  </p>
-<h2 id="energy-and-power-of-signals">Energy and Power of Signals</h2>
-<p>The notion of power and energy were initially only applicable to signals produced by physical systems only (i.e. v(t), i(t) across a resistor of resistance R). We create a generalization to allow power and energy to characterize any type of signal.</p>
-<p>We calculate the energy of a discreet time signal $x[n]$ over $[n_1,n_2]$ as</p>
+                <h1 id="lecture-26-notes">Lecture 26 - Notes</h1>
+<p><strong>March 15, 2016</strong>  </p>
+<h2 id="sampling">Sampling</h2>
+<p><em>Question</em>: Under what conditions can we reconstruct the original signal, $x(t)$, from its discrete, sampled, version, $x[n]$?</p>
+<p>To construct an <strong>impulse train</strong> we will use a sampling function $s(t)$, where,</p>
 <p>
-<script type="math/tex; mode=display">
-    E_x = \sum_{-\infty}^{\infty} \left|x[n]\right|^2
-</script>
+<script type="math/tex; mode=display">\begin{aligned}
+    x_s(t) = x_c(t) \cdot s(t)
+\end{aligned}</script>
 </p>
-<h4 id="example">Example</h4>
-<p>Find the energy contained in the signal,</p>
+<p>We can recover the signal $x_c(t)$ using an ideal lowpass filter.</p>
+<h3 id="example">Example</h3>
+<p><em>A  sinusoidal input signal, $x(t) = \cos{(10t)}$, is sampled with $\Omega _s = 90$. A signal $y(t)$ is generated using the bandpass filter,</em></p>
 <p>
-<script type="math/tex; mode=display">
-    x[n] = \left(\frac{1}{2}\right)^n u[n]
-</script>
+<script type="math/tex; mode=display">\begin{aligned}
+    H\left( j\Omega \right) = \begin{cases}
+        T & \text{for}~90 \lt \Omega \lt 180 \\\\
+        0 & \text{otherwise}
+    \end{cases}
+\end{aligned}</script>
 </p>
-<h5 id="solution">Solution</h5>
-<p>Since $x[n]$ contains a unit step function, it will be causal, so</p>
+<p><em>and a sampling function,</em></p>
 <p>
-<script type="math/tex; mode=display">\begin{align}
-    E_x &= \sum_{-\infty}^{\infty} \left|x[n]\right|^2 \newline
-    &=  \sum_{-\infty}^{\infty} \left|\left(\frac{1}{2}\right)^n u[n]\right|^2 \newline
-    &=  \sum_{0}^{\infty} \left|\left(\frac{1}{2}\right)^n \right|^2 \newline
-    &=  \sum_{0}^{\infty} \left(\frac{1}{4}\right)^n \newline
-    &=  \frac{1}{1 - \frac{1}{4}} \newline
-    &=  \frac{4}{3} \newline
-\end{align}</script>
+<script type="math/tex; mode=display">\begin{aligned}
+    s(t) = \sum_{k = -\infty}^{\infty} \delta(t - kT)
+\end{aligned}</script>
 </p>
-<h3 id="growing-and-decaying">Growing and Decaying</h3>
-<p>Given an exponential signal,</p>
+<p><em>where $T = \frac{2\pi}{90}$. Find $y(t)$.</em></p>
+<h3 id="discrete-time-processing-of-continuous-time-signals">Discrete Time Processing of Continuous Time Signals</h3>
 <p>
-<script type="math/tex; mode=display">
-    x[n] = \left(\frac{a}{b} \right)^n u[n]
-</script>
-</p>
-<p>A growing exponential is where $a \gt b$ and the energy will non-finite. A decaying exponential is where $a \lt b$ and will (possibly?) have a finite energy.</p>
-<h3 id="average-power">Average Power</h3>
-<p>A signal with finite energy is called an <strong>energy signal</strong>. Many Discreet Time signals don't have finite energy. For these signals we consider their <strong>average power</strong>.</p>
-<p>
-<script type="math/tex; mode=display">\begin{align}
-    P_x = \lim_{N \to \infty} \frac{1}{2N} \sum_{-N}^{N - 1} \left|x[n]\right|^2
-\end{align}</script>
-</p>
-<h2 id="discreet-time-systems">Discreet Time Systems</h2>
-<p>We represent a discrete-time system as a transformation that maps an input sequence $x[n]$ into a unique output sequence $y[n]$. We can classify these systems as,</p>
-<ul>
-<li><strong>Memoryless systems</strong></li>
-<li><strong>Linear systems</strong> <small>(examples 2.5, 2.6)</small></li>
-<li><strong>Time-invariant</strong> systems <small>(example 2.7, 2.8)</small></li>
-<li><strong>Causal systems</strong> <small>(example 2.9)</small></li>
-<li><strong>Stable systems</strong> <small>(example 2.10)</small></li>
-</ul>
-<h3 id="linear-systems">Linear Systems</h3>
-<p><em>definition</em>: A system is <strong>linear</strong> if the principle of
-superposition holds. </p>
-<h4 id="the-property-of-superposition">The Property of Superposition</h4>
-<p>If we consider two inputs to a system $x_1[n]$ and $x_2[n]$, we get two outputs $y_1[n]$ and $y_2[n]$ such that,</p>
-<p>
-<script type="math/tex; mode=display">\begin{align}
-    x_1[n] \to y_1[n] \newline
-    x_2[n] \to y_2[n]
-\end{align}</script>
-</p>
-<p>now if we create any <strong>linear combination</strong> of $x_1[n]$ and $x_2[n]$, denoted $x_3[n]$. Where,</p>
-<p>
-<script type="math/tex; mode=display">\begin{align}
-    x_3[n] = a_1 x_1[n] + a_2 x_2[n]
-\end{align}</script>
-</p>
-<p>and $a_1, a_2 \in \mathbb R$. Then if $y_3[n]$, the system output for $x_3[n]$, is the same linear combination of $y_1[n]$ and $y_2[n]$, i.e., if</p>
-<p>
-<script type="math/tex; mode=display">\begin{align}
-    x_3[n] &\to y_3[n] \newline
-    &\text{and} \newline
-    y_3[n] &= a_1 y_1[n] + a_2 y_2[n]
-\end{align}</script>
-</p>
-<p>the system is linear.</p>
-<h3 id="time-invariant-systems">Time Invariant Systems</h3>
-<p><em>definition</em>: A system is <strong>time invariant</strong> if for any input signal $x[n]$ with output signal $y[n]$, i.e.,</p>
-<p>
-<script type="math/tex; mode=display">\begin{align}
-    x[n] \to y[n]
-\end{align}</script>
-</p>
-<p>then for any <strong>time shift</strong> $n_0$ where $n_0 \in \mathbb Z$,</p>
-<p>
-<script type="math/tex; mode=display">\begin{align}
-    x[n - n_0] \to y[n - n_0]
-\end{align}</script>
+<script type="math/tex; mode=display">\begin{aligned}
+    X_d\left(e^{j\omega}\right) = \frac{1}{T} \sum_{k=-\infty}^{\infty} X_C \left( j \left( \frac{\omega}{T} - 2k \frac{\pi}{T} \right) \right)
+\end{aligned}</script>
 </p>
               
             </div>
@@ -342,10 +282,8 @@ superposition holds. </p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../2016-01-13/" class="btn btn-neutral float-right" title="2016 01 13">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../2016-01-08/" class="btn btn-neutral" title="2016 01 08"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../2016-03-04/" class="btn btn-neutral" title="2016 03 04"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -373,10 +311,8 @@ superposition holds. </p>
           <a href="https://github.com/UVicNotes/ELEC-310" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../2016-01-08/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../2016-03-04/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../2016-01-13/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
